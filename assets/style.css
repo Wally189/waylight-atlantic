@@ -211,5 +211,13 @@ details p{color:var(--muted);margin:8px 0 0}
   padding-bottom: 0;
 }
 
+.contact-image img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
 
 
