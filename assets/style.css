@@ -217,6 +217,27 @@ details p{color:var(--muted);margin:8px 0 0}
   margin: 0 auto;
 }
 
+.contact-left{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.contact-image{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:10px;
+  background:#fff;
+  overflow:hidden;
+}
+
+.contact-image img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:12px;
+}
+
 
 
 
