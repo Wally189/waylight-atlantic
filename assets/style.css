@@ -202,5 +202,14 @@ details p{color:var(--muted);margin:8px 0 0}
   border-color:var(--accent2);
 }
 
+/* Reduce the large gap in the contact section */
+.contact-grid {
+  align-items: start;
+}
+
+.contact-block:first-child {
+  padding-bottom: 0;
+}
+
 
 
