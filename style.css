@@ -1,1 +1,186 @@
+JMJ
+/* “To every thing there is a season, and a time to every purpose under the heaven.” (Ecclesiastes 3:1) */
+/* Ave Maria, gratia plena, Dominus tecum. */
+
+:root{
+  --ink:#0b0f17;
+  --muted:#4a5568;
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --line:#e6e8ef;
+  --ring:rgba(11,15,23,.12);
+  --radius:18px;
+  --max:1040px;
+
+  /* “Surprise me” palette (calm, Atlantic, BBC-ish) */
+  --accent:#0f766e;
+  --accent2:#1d4ed8;
+  --accent3:#7c3aed;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  color:var(--ink);
+  background:linear-gradient(180deg, #ffffff 0%, var(--bg) 22%, var(--bg) 100%);
+  line-height:1.6;
+
+  /* Aptos if installed, otherwise clean system fonts */
+  font-family: Aptos, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
+
+.skip-link{
+  position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{
+  left:16px;top:16px;width:auto;height:auto;
+  background:#fff;padding:10px 12px;border-radius:12px;
+  outline:3px solid var(--accent2);
+}
+
+.site-header{background:rgba(255,255,255,.92);backdrop-filter: blur(8px);position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line)}
+.topline{height:4px;background:linear-gradient(90deg, var(--accent2), var(--accent), var(--accent3))}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+
+.brand{display:flex;align-items:center;gap:12px;min-width:240px}
+.brand-mark{width:14px;height:14px;border-radius:999px;background:var(--accent)}
+.brand-name{font-weight:800;letter-spacing:.2px}
+.brand-tag{font-size:12px;color:var(--muted)}
+
+.site-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.site-nav a{
+  color:var(--ink);text-decoration:none;
+  padding:8px 10px;border-radius:12px;
+}
+.site-nav a:hover,.site-nav a:focus{outline:none;box-shadow:0 0 0 6px var(--ring)}
+.nav-cta{
+  background:var(--accent2);
+  color:#fff !important;
+  font-weight:700;
+}
+
+.hero{padding:30px 0 6px}
+.eyebrow{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  border:1px solid var(--line);
+  padding:6px 10px;
+  border-radius:999px;
+  background:#fff;
+}
+.hero h1{font-size:clamp(30px,4vw,48px);margin:12px 0 10px;line-height:1.12}
+.lede{color:var(--muted);max-width:70ch;margin:0 0 18px}
+
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+.btn{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:14px;
+  text-decoration:none;
+  background:var(--accent2);
+  color:#fff;
+  font-weight:750;
+  border:1px solid transparent;
+}
+.btn.ghost{
+  background:#fff;color:var(--ink);
+  border:1px solid var(--line);
+}
+.btn:hover,.btn:focus{outline:none;box-shadow:0 0 0 6px var(--ring)}
+
+.hero-bullets{
+  margin:16px 0 0;
+  padding-left:18px;
+  color:var(--muted);
+}
+.hero-bullets li{margin:6px 0}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px;
+  margin:14px 0;
+  box-shadow:0 1px 0 rgba(10,10,10,.03);
+}
+.card h2{margin:0 0 10px}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap:12px;
+}
+.tile{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+  background:linear-gradient(180deg, #fff 0%, #fbfcff 100%);
+}
+.tile h3{margin:0 0 6px}
+.tile p{margin:0 0 10px;color:var(--muted)}
+.tile ul{margin:0;padding-left:18px;color:var(--muted)}
+.tile li{margin:6px 0}
+
+.steps{padding-left:18px}
+.steps li{margin:8px 0}
+
+.principles{padding-left:18px}
+.principles li{margin:8px 0}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap:12px;
+}
+.contact-block{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+  background:#fff;
+}
+.form label{display:block;margin:10px 0;font-weight:650}
+.form input,.form textarea,.form select{
+  width:100%;
+  margin-top:6px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:10px 12px;
+  font:inherit;
+  background:#fff;
+}
+.form input:focus,.form textarea:focus,.form select:focus{
+  outline:none;
+  box-shadow:0 0 0 6px var(--ring);
+  border-color:transparent;
+}
+.checkline{
+  display:flex;gap:10px;align-items:flex-start;
+  font-weight:600;color:var(--muted);
+}
+.checkline input{width:auto;margin-top:3px}
+
+details{border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:#fff}
+details + details{margin-top:10px}
+summary{cursor:pointer;font-weight:750}
+details p{color:var(--muted);margin:8px 0 0}
+
+.note{margin-top:12px}
+
+.small{color:var(--muted);font-size:13px}
+.foot-strong{font-weight:800;margin:0}
+.site-footer{padding:26px 0;color:var(--muted)}
+.footer-links{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0}
+.footer-links a{color:var(--muted);text-decoration:none}
+.footer-links a:hover,.footer-links a:focus{outline:none;box-shadow:0 0 0 6px var(--ring);border-radius:10px}
+
+@media (max-width: 900px){
+  .grid{grid-template-columns: 1fr}
+  .contact-grid{grid-template-columns: 1fr}
+  .brand{min-width:auto}
+}
 
