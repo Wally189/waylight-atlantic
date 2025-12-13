@@ -187,3 +187,14 @@ details p{color:var(--muted);margin:8px 0 0}
   box-shadow: 0 6px 18px rgba(29,78,216,.25);
 }
 
+/* NOTE: JMJ / Scripture belongs in comments, not code tokens. */
+
+.hero{
+  padding: 38px 0 10px;
+}
+
+.card{
+  box-shadow: 0 10px 30px rgba(11,15,23,.05);
+}
+
+
