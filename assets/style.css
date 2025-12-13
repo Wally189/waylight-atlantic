@@ -183,3 +183,9 @@ details p{color:var(--muted);margin:8px 0 0}
   .contact-grid{grid-template-columns: 1fr}
   .brand{min-width:auto}
 }
+
+.btn {
+  background: #1d4ed8 !important;
+  box-shadow: 0 6px 18px rgba(29,78,216,.25);
+}
+
