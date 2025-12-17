@@ -22,6 +22,8 @@ Pater noster, qui es in caelis…
   --radius: 18px;
   --radius-sm: 12px;
   --max: 1120px;
+  --card-opacity: 0.65;
+  --hero-bg-opacity: 0.5;
 }
 
 *{box-sizing:border-box}
@@ -204,7 +206,7 @@ h1{font-size: clamp(2rem, 4vw, 3rem); line-height:1.1; margin:.8rem 0 1rem}
 @media (min-width: 860px){.cards{grid-template-columns: repeat(3, 1fr)}}
 
 .card{
-  background: rgba(255,255,255,.65);
+  background: rgba(255,255,255,var(--card-opacity));
   border:1px solid var(--line);
   border-radius: var(--radius);
   padding: 1.1rem;
@@ -214,7 +216,7 @@ h1{font-size: clamp(2rem, 4vw, 3rem); line-height:1.1; margin:.8rem 0 1rem}
 .card p{margin:.3rem 0}
 
 .note{
-  background: rgba(255,255,255,.65);
+  background: rgba(255,255,255,var(--card-opacity));
   border:1px solid var(--line);
   border-left: 6px solid var(--gold);
   border-radius: var(--radius);
@@ -466,6 +468,15 @@ summary{cursor:pointer; font-weight:900}
   inset: 0;
 }
 
+.hero-bg-primary {
+  opacity: var(--hero-bg-opacity);
+}
+
+.hero-bg-secondary {
+  opacity: var(--hero-bg-opacity);
+  mix-blend-mode: overlay;
+}
+
 .section-image {
   width: 100%;
   height: auto;
@@ -630,4 +641,31 @@ img[loading="lazy"].loaded {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* Utility margin classes */
+.mt-1-5 {
+  margin-top: 1.5rem;
+}
+
+.mt-2-5 {
+  margin-top: 2.5rem;
+}
+
+.my-1-5 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.my-2-5 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2-5 {
+  margin-bottom: 2.5rem;
 }
