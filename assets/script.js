@@ -272,6 +272,17 @@
       root.style.removeProperty("--teal-2");
       root.style.removeProperty("--muted");
     }
+    
+    // Handle localized images
+    document.querySelectorAll('[data-lang-image]').forEach((img) => {
+      const imgLang = img.getAttribute('data-lang-image');
+      if (imgLang === lang) {
+        img.classList.add('active');
+      } else {
+        img.classList.remove('active');
+      }
+    });
+    
     const dict = translations[lang];
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
@@ -323,4 +334,26 @@
   const saved = localStorage.getItem("waylight-lang") || "en";
   langBtns.forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-lang-btn") === saved));
   applyTranslations(saved);
+
+  // Lazy loading for images
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.classList.add('loaded');
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      imageObserver.observe(img);
+    });
+  } else {
+    // Fallback for browsers without IntersectionObserver
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      img.classList.add('loaded');
+    });
+  }
 })();
