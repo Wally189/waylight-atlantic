@@ -8,9 +8,9 @@ This repository includes VS Code workspace configuration to help with automatic 
 ### Automatic Git Features
 
 The `.vscode/settings.json` file is configured to:
-- **Auto-fetch**: Automatically fetch updates from the remote repository every 3 minutes
-- **Auto-sync**: Automatically sync (pull and push) changes after commits
+- **Auto-fetch**: Automatically fetch updates from the remote repository every 10 minutes
 - **Fetch on pull**: Always fetch before pulling to get the latest remote changes
+- **Smart commit**: Enable smart commit for easier Git operations
 
 ### Quick Git Operations
 
