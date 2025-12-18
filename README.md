@@ -1,6 +1,40 @@
 # waylight-atlantic
 Waylight Homepage 
 
+## Deployment
+
+This website is automatically deployed to GitHub Pages at [www.waylight-atlantic.co.uk](https://www.waylight-atlantic.co.uk).
+
+### How to Push Code to the Live Website
+
+The deployment process is fully automated using GitHub Actions. Here's how it works:
+
+1. **Make your changes** to the HTML files, CSS, images, or other assets
+2. **Commit your changes** using Git:
+   - In VS Code: Use the Source Control panel (Ctrl+Shift+G / Cmd+Shift+G)
+   - Or via terminal: `git add .` and `git commit -m "Your commit message"`
+3. **Push to the main branch**:
+   - In VS Code: Click the sync button or use the Source Control panel menu → Push
+   - Or via terminal: `git push origin main`
+4. **Automatic deployment**: GitHub Actions will automatically deploy your changes to the live website within a few minutes
+
+You can monitor the deployment status:
+- Go to the [Actions tab](https://github.com/Wally189/waylight-atlantic/actions) in the GitHub repository
+- Look for the "Deploy to GitHub Pages" workflow
+- Once the workflow completes successfully, your changes will be live
+
+### Manual Deployment Trigger
+
+If you need to re-deploy without making changes:
+1. Go to the [Actions tab](https://github.com/Wally189/waylight-atlantic/actions)
+2. Select "Deploy to GitHub Pages" workflow
+3. Click "Run workflow" button
+4. Select the main branch and click "Run workflow"
+
+### Detailed Documentation
+
+For comprehensive deployment documentation, troubleshooting, and best practices, see [DEPLOYMENT.md](DEPLOYMENT.md).
+
 ## VS Code Setup
 
 This repository includes VS Code workspace configuration to help with automatic Git updates and development workflow.
