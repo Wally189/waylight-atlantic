@@ -526,6 +526,17 @@ summary{cursor:pointer; font-weight:900}
   }
 }
 
+.image-grid-wide {
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .image-grid-wide {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 940px;
+  }
+}
+
 .localized-image-container {
   position: relative;
   border-radius: var(--radius);
@@ -537,7 +548,7 @@ summary{cursor:pointer; font-weight:900}
 .localized-image {
   width: 100%;
   height: auto;
-  display: block;
+  display: none;
   opacity: 0;
   transition: opacity 400ms ease;
   position: absolute;
@@ -546,8 +557,17 @@ summary{cursor:pointer; font-weight:900}
 }
 
 .localized-image.active {
+  display: block;
   opacity: 1;
   position: relative;
+}
+
+.localized-block {
+  display: none;
+}
+
+.localized-block.active {
+  display: block;
 }
 
 .page-hero-image {

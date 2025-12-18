@@ -282,6 +282,12 @@
         img.classList.remove('active');
       }
     });
+
+    // Handle localized text blocks
+    document.querySelectorAll('[data-lang-block]').forEach((block) => {
+      const blockLang = block.getAttribute('data-lang-block');
+      block.classList.toggle('active', blockLang === lang);
+    });
     
     const dict = translations[lang];
     document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -331,9 +337,12 @@
     });
   });
 
-  const saved = localStorage.getItem("waylight-lang") || "en";
-  langBtns.forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-lang-btn") === saved));
-  applyTranslations(saved);
+  const defaultLang = root.lang && root.lang.toLowerCase().startsWith("ga") ? "ga" : "en";
+  const initialLang = defaultLang;
+
+  langBtns.forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-lang-btn") === initialLang));
+  applyTranslations(initialLang);
+  localStorage.setItem("waylight-lang", initialLang);
 
   // Lazy loading for images
   if ('IntersectionObserver' in window) {
