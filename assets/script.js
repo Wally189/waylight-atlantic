@@ -337,8 +337,7 @@
     });
   });
 
-  const defaultLang = root.lang && root.lang.toLowerCase().startsWith("ga") ? "ga" : "en";
-  const initialLang = defaultLang;
+  const initialLang = root.lang && root.lang.toLowerCase().startsWith("ga") ? "ga" : "en";
 
   langBtns.forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-lang-btn") === initialLang));
   applyTranslations(initialLang);
