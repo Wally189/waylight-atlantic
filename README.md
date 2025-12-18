@@ -31,6 +31,10 @@ If you need to re-deploy without making changes:
 3. Click "Run workflow" button
 4. Select the main branch and click "Run workflow"
 
+### Detailed Documentation
+
+For comprehensive deployment documentation, troubleshooting, and best practices, see [DEPLOYMENT.md](DEPLOYMENT.md).
+
 ## VS Code Setup
 
 This repository includes VS Code workspace configuration to help with automatic Git updates and development workflow.
