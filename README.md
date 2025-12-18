@@ -12,13 +12,54 @@ The `.vscode/settings.json` file is configured to:
 - **Fetch on pull**: Always fetch before pulling to get the latest remote changes
 - **Smart commit**: Enable smart commit for easier Git operations
 
-### Quick Git Operations
+### How to Update the Repo with the Latest Changes
 
-You can use VS Code tasks (Terminal → Run Task) to perform common Git operations:
-- **Git: Pull Updates** - Pull the latest changes from the remote repository
-- **Git: Fetch All** - Fetch all branches and prune deleted remote branches
-- **Git: Sync (Pull & Push)** - Pull and push changes in one command
-- **Git: Show Status** - Display current Git status
+There are several ways to pull the latest changes from the remote repository in VS Code:
+
+#### Method 1: Using the Source Control Panel (Easiest)
+
+1. Click the **Source Control** icon in the left sidebar (or press `Ctrl+Shift+G` / `Cmd+Shift+G`)
+2. Click the **three dots (...)** menu at the top of the Source Control panel
+3. Select **Pull** from the dropdown menu
+4. VS Code will download and merge the latest changes
+
+#### Method 2: Using VS Code Tasks
+
+1. Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
+2. Type "Tasks: Run Task" and press Enter
+3. Select one of these pre-configured tasks:
+   - **Git: Pull Updates** - Pull the latest changes from the remote repository
+   - **Git: Fetch All** - Fetch all branches and prune deleted remote branches
+   - **Git: Sync (Pull & Push)** - Pull and push changes in one command
+   - **Git: Show Status** - Display current Git status
+
+#### Method 3: Using the Command Palette
+
+1. Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
+2. Type "Git: Pull" and press Enter
+3. VS Code will pull the latest changes
+
+#### Method 4: Using the Terminal
+
+1. Open the integrated terminal in VS Code (`Ctrl+`` / `Cmd+``)
+2. Run the command: `git pull`
+
+#### Method 5: Using the Sync Button (Pull & Push)
+
+1. Look at the bottom-left corner of VS Code
+2. Click the **sync icon** (circular arrows) in the status bar
+3. This will pull the latest changes AND push any local commits you have
+
+### Troubleshooting
+
+**Problem: "Your local changes would be overwritten by merge"**
+- Solution: Either commit your changes first, or stash them with `git stash`, then pull
+
+**Problem: "Merge conflicts"**
+- Solution: VS Code will highlight conflicting files. Open them, resolve conflicts, then commit
+
+**Problem: "Updates were rejected because the remote contains work that you do not have"**
+- Solution: Pull first before pushing: use the Sync button or run `git pull` then `git push`
 
 ### Recommended Extensions
 
