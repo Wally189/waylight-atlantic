@@ -1,0 +1,16 @@
+{
+  "git.autofetch": true,
+  "git.autofetchPeriod": 180,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.postCommitCommand": "sync",
+  "git.showPushSuccessNotification": true,
+  "git.fetchOnPull": true,
+  "git.pruneOnFetch": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "editor.formatOnSave": true,
+  "html.format.enable": true,
+  "html.format.wrapLineLength": 120,
+  "html.format.indentInnerHtml": true
+}
