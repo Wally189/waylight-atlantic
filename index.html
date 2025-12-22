@@ -67,8 +67,8 @@
     <main id="main">
       <section class="hero hero-with-image">
         <div class="hero-background-images">
-          <img src="assets/images/WaylightSeaside.png" alt="" loading="lazy" class="hero-bg-primary" />
-          <img src="images/2.svg" alt="" loading="lazy" class="hero-bg-secondary" />
+          <img src="assets/images/WaylightSeaside.png" alt="WayLight Atlantic Seaside" loading="lazy" class="hero-bg-primary localized-image" data-lang-image="en" />
+          <img src="assets/images/WaylightSeasideGA.png" alt="WayLight Atlantic Seaside (Irish)" loading="lazy" class="hero-bg-primary localized-image" data-lang-image="ga" style="display:none;" />
         </div>
         <div class="container hero-grid">
           <div class="hero-copy">
@@ -188,8 +188,7 @@
         <div class="container">
 
           <div class="localized-image-container my-1-5">
-            <img src="assets/images/WaylightSeaside.png" alt="Our values and story" class="localized-image active" data-lang-image="en" loading="lazy" />
-            <img src="assets/images/WaylightSeasideGA.png" alt="Ár luachanna agus ár scéal" class="localized-image" data-lang-image="ga" loading="lazy" />
+            <!-- Only one image in hero, so remove these from here -->
           </div>
           <div class="cards">
             <article class="card">
@@ -327,6 +326,27 @@
     </footer>
 
     <script src="assets/script.min.js"></script>
+      <script>
+        // Language toggle for hero image
+        document.addEventListener('DOMContentLoaded', function () {
+          const langBtns = document.querySelectorAll('.lang-btn');
+          const images = document.querySelectorAll('.hero-bg-primary.localized-image');
+          langBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+              const lang = btn.getAttribute('data-lang-btn');
+              images.forEach(img => {
+                if (img.getAttribute('data-lang-image') === lang) {
+                  img.style.display = '';
+                } else {
+                  img.style.display = 'none';
+                }
+              });
+              langBtns.forEach(b => b.classList.remove('is-active'));
+              btn.classList.add('is-active');
+            });
+          });
+        });
+      </script>
   </body>
 
 </html>
