@@ -1,5 +1,6 @@
 {
-  "recommendations": [
+  "recommendations": [],
+  "unwantedRecommendations": [
     "github.vscode-pull-request-github",
     "eamodio.gitlens",
     "mhutchie.git-graph",
