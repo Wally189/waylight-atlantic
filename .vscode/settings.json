@@ -9,7 +9,42 @@
   "git.pruneOnFetch": true,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
-  "editor.formatOnSave": true,
+  // Exclude heavy folders from file watching and search
+  "files.watcherExclude": {
+    "**/node_modules": true,
+    "**/.git": true,
+    "**/build": true,
+    "**/dist": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.git": true,
+    "**/build": true,
+    "**/dist": true
+  },
+  // Lower editor update frequency
+  "editor.cursorBlinking": "solid",
+  // Disable minimap for performance
+  "editor.minimap.enabled": false,
+  // Disable breadcrumbs
+  "breadcrumbs.enabled": false,
+  // Disable automatic format on save
+  "editor.formatOnSave": false,
+  // Disable automatic linting
+  "eslint.enable": false,
+  // Disable suggestions from all languages except basic
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+  // Disable preview of files on single click
+  "workbench.editor.enablePreview": false,
+  // Use a lightweight theme
+  "workbench.colorTheme": "Default Light+",
+  // Disable telemetry
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
   "html.format.enable": true,
   "html.format.wrapLineLength": 120,
   "html.format.indentInnerHtml": true

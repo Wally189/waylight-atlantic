@@ -13,6 +13,61 @@
     });
   }
 
+  // Share menu
+  const shareUrl = encodeURIComponent(window.location.href);
+  const shareTitle = encodeURIComponent(document.title);
+  const shareMenus = document.querySelectorAll("[data-share-menu]");
+  const shareToggles = document.querySelectorAll("[data-share-toggle]");
+
+  shareMenus.forEach((menu) => {
+    menu.querySelectorAll("[data-share]").forEach((item) => {
+      const type = item.getAttribute("data-share");
+      if (type === "facebook") {
+        item.setAttribute("href", `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`);
+      } else if (type === "x") {
+        item.setAttribute("href", `https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`);
+      } else if (type === "linkedin") {
+        item.setAttribute("href", `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`);
+      } else if (type === "email") {
+        item.setAttribute("href", `mailto:?subject=${shareTitle}&body=${shareUrl}`);
+      } else if (type === "copy") {
+        item.addEventListener("click", () => {
+          const label = item.textContent;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+              item.textContent = "Copied";
+              setTimeout(() => { item.textContent = label; }, 1500);
+            });
+          } else {
+            window.prompt("Copy link:", window.location.href);
+          }
+        });
+      }
+    });
+  });
+
+  shareToggles.forEach((btn) => {
+    const menu = btn.parentElement?.querySelector("[data-share-menu]");
+    if (!menu) return;
+    btn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const isOpen = menu.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    shareMenus.forEach((menu) => {
+      if (!menu.classList.contains("is-open")) return;
+      const wrapper = menu.parentElement;
+      if (wrapper && !wrapper.contains(event.target)) {
+        menu.classList.remove("is-open");
+        const toggle = wrapper.querySelector("[data-share-toggle]");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
   const translations = {
     ga: {
       // Nav / brand / footer
@@ -337,11 +392,14 @@
     });
   });
 
-  const initialLang = root.lang && root.lang.toLowerCase().startsWith("ga") ? "ga" : "en";
+  const storedLang = localStorage.getItem("waylight-lang");
+  const initialLang = storedLang || (root.lang && root.lang.toLowerCase().startsWith("ga") ? "ga" : "en");
 
   langBtns.forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-lang-btn") === initialLang));
   applyTranslations(initialLang);
-  localStorage.setItem("waylight-lang", initialLang);
+  if (!storedLang) {
+    localStorage.setItem("waylight-lang", initialLang);
+  }
 
   // Lazy loading for images
   if ('IntersectionObserver' in window) {
