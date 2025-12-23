@@ -1,0 +1,199 @@
+/* Section divider for flow */
+.section-divider {
+    width: 100%;
+    height: 2px;
+    margin: 3rem 0 2.5rem 0;
+    border: none;
+    background: linear-gradient(90deg, rgba(198, 161, 91, 0.12) 0%, rgba(31, 58, 86, 0.18) 100%);
+    border-radius: 2px;
+}
+
+.section-contrast {
+  background: linear-gradient(180deg, var(--brand-green) 0%, rgba(15,61,62,.06) 100%);
+  border-top: 1px solid var(--brand-green);
+  border-bottom: 1px solid var(--brand-green);
+}
+
+/* Standardized main illustration framing */
+.main-illustration {
+    max-width: 420px;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 32px rgba(31, 58, 86, 0.10);
+    margin: 0 auto 2rem auto;
+    display: block;
+}
+
+.localized-image-container,
+.main-illustration-container {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    background: #fff;
+    margin: 0 auto 2rem auto;
+    max-width: 440px;
+}
+
+/* Unified button and CTA placement */
+.btn,
+.cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: .72rem 1.5rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: .01em;
+    cursor: pointer;
+    transition: transform 180ms cubic-bezier(.2, .9, .35, 1.25), box-shadow 180ms ease, background 160ms ease, color 160ms ease;
+    will-change: transform;
+    margin: 1.5rem auto 0 auto;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+  background: var(--brand-blue);
+  color: #fff;
+  border-color: var(--brand-green);
+  box-shadow: var(--shadow);
+}
+}
+
+.btn-primary:hover {
+  background: var(--brand-green);
+  color: var(--brand-blue);
+  border-color: var(--brand-blue);
+}
+
+.btn-ghost {
+    background: rgba(255, 255, 255, .55);
+    border-color: var(--line);
+}
+
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, .85);
+}
+
+.btn:active,
+.cta-primary:active {
+    transform: translateY(-1px);
+}
+
+/* Standardized container and card styles */
+.container {
+    width: min(var(--max), calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 0;
+}
+
+.card {
+  /* ...existing styles... */
+  border: 2px solid var(--brand-green);
+}
+.mini {
+  border: 2px dashed var(--brand-green);
+}
+.paper {
+  border: 2px solid var(--brand-green);
+}
+
+.note {
+    border-left: 6px solid var(--gold);
+}
+
+/* Unified hero section for all pages */
+.hero-section,
+.hero,
+.page-hero {
+    border-bottom: 1px solid var(--line);
+    padding: 3.5rem 0 2.5rem;
+    background-image:
+        radial-gradient(900px 400px at 10% 10%, rgba(198, 161, 91, .18), transparent 60%),
+        radial-gradient(900px 400px at 80% 20%, rgba(15, 61, 62, .12), transparent 60%),
+        var(--paper-noise);
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: cover, cover, 260px 260px;
+}
+
+.hero-section h1,
+.hero h1,
+.page-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin: .8rem 0 1rem;
+    font-family: "IBM Plex Serif", "Times New Roman", serif;
+    font-weight: 700;
+}
+
+.hero-section .lead,
+.hero .lead,
+.page-hero .lead {
+    font-size: 1.12rem;
+    color: var(--muted);
+    max-width: 62ch;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Serif:wght@400;500;600;700&display=swap');
+/*
+JMJ
+Ecclesiastes 3:1 — To every thing there is a season, and a time to every purpose under the heaven.
+Pater noster, qui es in caelis…
+Ár nAthair atá ar neamh…
+*/
+
+:root {
+  /* ...existing variables... */
+  --brand-blue: #0F3D3E;
+  --brand-green: #B7C9B7;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: "Archivo", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    color: var(--ink);
+    background-color: var(--paper);
+    background-image:
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 60%, #ffffff 100%),
+        var(--paper-noise);
+    background-repeat: no-repeat, repeat;
+    background-size: auto, 280px 280px;
+    line-height: 1.55;
+}
+
+a {
+    color: inherit
+}
+
+img {
+    max-width: 100%;
+    height: auto
+}
+
+strong {
+    font-weight: 700
+}
+
+h1, h2, h3, h4, h5, h6, .brand-title {
+  /* ...existing styles... */
+  color: var(--brand-blue);
+}
+
+a:hover, .nav-link:hover {
+  color: var(--brand-blue);
+  border-color: var(--brand-green);
+}
