@@ -4,7 +4,7 @@
 
 **Your website IS live with all your VS Code updates!** ✅
 
-The main branch contains all your recent changes and is deployed at waylight-atlantic.co.uk.
+The main branch contains all your recent changes and is deployed at www.waylight-atlantic.co.uk.
 
 ## If You Want to Delete Old Branches
 
