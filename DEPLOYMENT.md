@@ -138,6 +138,17 @@ The deployment will start immediately.
    ```
    Should show `* main`. If not, checkout main and push again.
 
+### Custom domain shows DNS PROBE FINISHED NXDOMAIN
+
+This error means DNS cannot find `www.waylight-atlantic.co.uk` before the request ever reaches GitHub Pages. To fix:
+1. Confirm the domain is active with your registrar.
+2. In DNS settings, add a **CNAME** record:  
+   - **Name/Host**: `www`  
+   - **Value/Target**: `wally189.github.io`
+3. (Optional for apex) Add A records for `waylight-atlantic.co.uk` pointing to GitHub Pages IPs `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`.
+4. Keep the `public/CNAME` file set to `www.waylight-atlantic.co.uk`.
+5. Wait for DNS propagation (can take up to 24 hours), then retry the site.
+
 ### Deployment Workflow Failed
 
 1. **View the error logs**
