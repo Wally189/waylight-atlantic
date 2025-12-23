@@ -6,7 +6,7 @@ After analyzing your repository, I can confirm that:
 
 1. **Your main branch contains all your VS Code updates** - The latest commits by Alan W. P. Gallagher from December 22-23, 2025 are all there
 2. **Your website is successfully deployed** - GitHub Pages deployed your latest changes on December 23, 2025 at 16:02 UTC
-3. **The live site at waylight-atlantic.co.uk shows your latest version** - All your recent updates are live
+3. **The live site at www.waylight-atlantic.co.uk shows your latest version** - All your recent updates are live
 
 ## Current Main Branch Status
 
@@ -66,4 +66,4 @@ If you want to tidy up the repository:
 
 ---
 
-**Conclusion:** Your website is live with all your recent VS Code updates. No action is required unless you want to delete old branches for cleanliness.
+**Conclusion:** Your website is live with all your recent VS Code updates. No action is required unless you want to delete old branches for cleanliness. Visit www.waylight-atlantic.co.uk to see your live site!
