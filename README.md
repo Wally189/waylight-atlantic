@@ -4,6 +4,7 @@ Waylight Homepage
 ## Deployment
 
 This website is automatically deployed to GitHub Pages at [www.waylight-atlantic.co.uk](https://www.waylight-atlantic.co.uk).
+If you see `DNS_PROBE_FINISHED_NXDOMAIN` when visiting the custom domain, follow the DNS steps in [DEPLOYMENT.md](DEPLOYMENT.md#custom-domain-shows-dns-probe-finished-nxdomain).
 
 ### How to Push Code to the Live Website
 
