@@ -1,0 +1,64 @@
+name: Pull Request Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Validate HTML files
+        run: |
+          echo "Checking for HTML files in public directory..."
+          if [ ! -d "public" ]; then
+            echo "Error: public directory not found"
+            exit 1
+          fi
+          
+          html_count=$(find public -name "*.html" -type f | wc -l)
+          echo "Found $html_count HTML files"
+          
+          if [ "$html_count" -eq 0 ]; then
+            echo "Warning: No HTML files found in public directory"
+            exit 1
+          fi
+          
+          echo "✓ HTML files validation passed"
+      
+      - name: Check for required files
+        run: |
+          echo "Checking for required files..."
+          required_files=("public/index.html" "CNAME")
+          
+          for file in "${required_files[@]}"; do
+            if [ -f "$file" ]; then
+              echo "✓ Found: $file"
+            else
+              echo "✗ Missing: $file"
+              exit 1
+            fi
+          done
+          
+          echo "✓ All required files present"
+      
+      - name: Verify deployment directory
+        run: |
+          echo "Verifying public directory structure..."
+          ls -la public/
+          
+          if [ ! -d "public/assets" ]; then
+            echo "Warning: public/assets directory not found"
+          else
+            echo "✓ Assets directory exists"
+          fi
+          
+          echo "✓ Deployment directory validation complete"
