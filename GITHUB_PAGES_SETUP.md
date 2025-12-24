@@ -1,18 +1,25 @@
 # GitHub Pages Setup Verification
 
+## ⚠️ IMPORTANT: Merge This PR First!
+
+**The deployment workflow only runs on the `main` branch.** This PR hasn't been merged yet, so the site hasn't been deployed. You're currently seeing GitHub's default "how to deploy" page because no deployment has happened.
+
+**To fix**: Merge this PR to `main`, and the deployment will happen automatically within 2-5 minutes.
+
 ## Current Status
 
-Your repository is configured to deploy to GitHub Pages using GitHub Actions. The configuration appears correct:
+Your repository is configured to deploy to GitHub Pages using GitHub Actions. The configuration is correct:
 
 ✅ **Workflow file exists**: `.github/workflows/deploy.yml`
 ✅ **Index file exists**: `public/index.html`
 ✅ **Jekyll disabled**: `public/.nojekyll` file present
 ✅ **Custom domain configured**: `public/CNAME` points to `www.waylight-atlantic.co.uk`
-✅ **Recent deployments successful**: Latest workflow runs completed successfully
+✅ **Recent deployments successful**: Latest workflow runs on `main` branch completed successfully
+⚠️ **Deployment trigger**: Workflow only runs on pushes to `main` branch
 
-## How to Access Your Site
+## How to Access Your Site (After Merging)
 
-Your site should be accessible at:
+After you merge this PR to `main`, your site will be accessible at:
 - **Custom Domain**: https://www.waylight-atlantic.co.uk
 - **GitHub Pages URL**: https://wally189.github.io/waylight-atlantic/
 
