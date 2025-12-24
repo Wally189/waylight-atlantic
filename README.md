@@ -36,6 +36,18 @@ If you need to re-deploy without making changes:
 
 For comprehensive deployment documentation, troubleshooting, and best practices, see [DEPLOYMENT.md](DEPLOYMENT.md).
 
+## Pull Request Checks
+
+When you create a pull request, automated checks will run to validate your changes before merging to main:
+
+- **Validate HTML files**: Ensures HTML files exist in the `public` directory
+- **Check required files**: Verifies `public/index.html` and `CNAME` are present
+- **Verify deployment directory**: Validates the structure of the `public` directory
+
+These checks help maintain website quality and prevent deployment issues. You can view check results in the "Checks" tab of your pull request.
+
+**Note:** If you encounter issues with stuck or pending checks, see [CHECKS_INTEGRATION_FIX.md](CHECKS_INTEGRATION_FIX.md) for troubleshooting guidance.
+
 ## VS Code Setup
 
 This repository includes VS Code workspace configuration to help with automatic Git updates and development workflow.
