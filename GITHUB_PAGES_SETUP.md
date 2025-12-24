@@ -38,7 +38,7 @@ Your site should be accessible at:
 ### 3. Clear Browser Cache
 
 If the settings look correct but you still see an old version or error:
-- Press **Ctrl+Shift+R** (Windows/Linux) or **Cmd+Shift+R** (Mac) to hard refresh
+- Press **Ctrl+Shift+R** (Windows/Linux) or **⌘+Shift+R** (Mac) to hard refresh
 - Or open the site in an incognito/private browsing window
 
 ### 4. DNS Propagation (for Custom Domain)
@@ -46,7 +46,7 @@ If the settings look correct but you still see an old version or error:
 If you're using the custom domain `www.waylight-atlantic.co.uk`:
 - DNS changes can take up to 24-48 hours to propagate globally
 - Check your domain registrar's DNS settings match the instructions in DEPLOYMENT.md
-- You can test DNS propagation at https://dnschecker.org
+- You can verify DNS status using command line tools like `nslookup` or `dig`
 
 ## Troubleshooting
 
@@ -67,7 +67,7 @@ If you're using the custom domain `www.waylight-atlantic.co.uk`:
 ### Issue: Seeing old content
 
 **Solution**:
-- Hard refresh your browser (Ctrl+Shift+R / Cmd+Shift+R)
+- Hard refresh your browser (**Ctrl+Shift+R** / **⌘+Shift+R**)
 - Clear browser cache
 - Try accessing in incognito/private mode
 
