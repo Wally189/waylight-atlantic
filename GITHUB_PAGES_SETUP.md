@@ -44,8 +44,8 @@ If the settings look correct but you still see an old version or error:
 ### 4. DNS Propagation (for Custom Domain)
 
 If you're using the custom domain `www.waylight-atlantic.co.uk`:
-- DNS changes can take up to 24-48 hours to propagate globally
-- Check your domain registrar's DNS settings match the instructions in DEPLOYMENT.md
+- DNS changes can take up to 24 hours to propagate globally
+- Check your domain registrar's DNS settings match the instructions in DEPLOYMENT.md (see "Custom domain shows DNS PROBE FINISHED NXDOMAIN" section)
 - You can verify DNS status using command line tools like `nslookup` or `dig`
 
 ## Troubleshooting
