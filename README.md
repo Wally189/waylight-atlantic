@@ -36,6 +36,12 @@ If you need to re-deploy without making changes:
 
 For comprehensive deployment documentation, troubleshooting, and best practices, see [DEPLOYMENT.md](DEPLOYMENT.md).
 
+## Public Folder URLs
+
+- Files in the `public` folder are served at the site root. For example, the local file `public/about.html` becomes available at `/about.html` (not `/public/about.html`) on the live site.
+- GitHub Pages does not provide directory listings; access files directly via their full paths (for example, `/assets/images/logo.png`).
+- If someone visits a `/public/...` URL, the 404 page now redirects them to the correct root-relative path.
+
 ## Pull Request Checks
 
 When you create a pull request, automated checks will run to validate your changes before merging to main:
