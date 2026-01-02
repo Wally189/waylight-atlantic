@@ -3,6 +3,19 @@
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 
+  // Ledger date stamp
+  const ledgerDateEls = document.querySelectorAll("[data-ledger-date]");
+  if (ledgerDateEls.length) {
+    const now = new Date();
+    const locale = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith("ga") ? "ga-IE" : "en-GB";
+    const day = String(now.getDate()).padStart(2, "0");
+    const month = now.toLocaleString(locale, { month: "short" }).toUpperCase();
+    const stamp = `${day} ${month} ${now.getFullYear()}`;
+    ledgerDateEls.forEach((el) => {
+      el.textContent = stamp;
+    });
+  }
+
   // Mobile nav
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.getElementById("site-nav");
@@ -84,6 +97,16 @@
       // Global CTAs
       "cta.book.slot": "Cuir coinne in áirithe",
       "cta.view.packages": "Féach na pacáistí",
+      // Signature mantra
+      "signature.mantra": "Struchtúr roimh luas.",
+      "signature.subtext": "Gach leathanach, gach tionscadal — seachadadh socair le dromlach néata.",
+      // Ledger strip
+      "ledger.logref.label": "Tagairt loga.",
+      "ledger.logref.value": "WL-UTL-1940",
+      "ledger.stamped.label": "Stampáilte",
+      "ledger.next.label": "An chéad ghníomh",
+      "ledger.next.body": "Seol achoimre ghearr nó cuir coinne in áirithe; freagróimid laistigh de lá oibre.",
+      "ledger.signal": "Comhartha ceart",
 
       // Index hero
       "hero.kicker": "Téamaí fóntais, caighdeáin nua-aimseartha",
