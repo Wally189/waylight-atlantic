@@ -1,54 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Serif:wght@400;500;600;700&display=swap');
 /*
 JMJ
 Ecclesiastes 3:1 — To every thing there is a season, and a time to every purpose under the heaven.
 Pater noster, qui es in caelis…
 Ár nAthair atá ar neamh…
 */
-
-:root{
-  --ink:#1E262F;
-  --paper:#F4EEDF;
-  --paper-2:#F9F5EB;
-  --teal:#1F3A56;
-  --teal-2:#182C42;
-  --gold:#C89B3C;
-  --line:#D2C7B4;
-  --muted:#6B715E;
-  --navy-rgb: 31 58 86;
-  --brass-rgb: 200 155 60;
-  --shadow: 0 10px 30px rgb(var(--navy-rgb) / .12);
-  --paper-noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
-  --radius: 18px;
-  --radius-sm: 12px;
-  --max: 1120px;
-  --card-opacity: 0.65;
-  --hero-bg-opacity: 0.5;
-}
-
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: "Archivo", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-  color:var(--ink);
-  background-color: var(--paper);
-  background-image:
-    linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 60%, #ffffff 100%),
-    var(--paper-noise);
-  background-repeat: no-repeat, repeat;
-  background-size: auto, 280px 280px;
-  line-height:1.55;
-}
-
-a{color:inherit}
-img{max-width:100%;height:auto}
-strong{font-weight:700}
-h1,h2,h3,h4,h5,h6,.brand-title{
-  font-family: "IBM Plex Serif", "Times New Roman", serif;
-  letter-spacing:.01em;
-}
-h1,h2{font-weight:700}
 
 .container{width:min(var(--max), calc(100% - 2rem)); margin:0 auto}
 
@@ -678,55 +633,6 @@ h1,h2{font-weight:700}
 .step-b h3{margin:.1rem 0 .2rem}
 .step-b p{margin:.1rem 0; color:var(--muted)}
 
-/* Buttons */
-.btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  gap:.5rem;
-  padding:.72rem 1rem;
-  border-radius: 999px;
-  border:1px solid transparent;
-  text-decoration:none;
-  font-weight:800;
-  letter-spacing:.01em;
-  cursor:pointer;
-  transition: transform 180ms cubic-bezier(.2,.9,.35,1.25), box-shadow 180ms ease, background 160ms ease, color 160ms ease;
-  will-change: transform;
-  position:relative;
-  overflow:hidden;
-}
-.btn::after{
-  content:"";
-  position:absolute;
-  inset:-120% -40%;
-  background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,.6) 45%, transparent 70%);
-  transform: translateX(-120%);
-  opacity:0;
-}
-.btn-primary{
-  background: var(--teal);
-  color:#fff;
-  border-color: rgba(15,61,62,.25);
-  box-shadow: var(--shadow);
-}
-.btn-primary:hover{background: var(--teal-2)}
-.btn-ghost{
-  background: rgba(255,255,255,.55);
-  border-color: var(--line);
-}
-.btn-ghost:hover{background: rgba(255,255,255,.85)}
-.btn:hover{
-  transform: translateY(-2px) scale(1.01);
-  box-shadow: 0 14px 36px rgb(var(--navy-rgb) / .16);
-  animation: btn-breathe 1.4s ease-in-out infinite;
-}
-.btn:hover::after{
-  opacity:.9;
-  animation: shimmer-sweep 1.1s linear infinite;
-}
-.btn:active{
-  transform: translateY(-1px);
-}
-.btn-small{padding:.55rem .85rem; font-size:.95rem}
 
 @keyframes shimmer-sweep{
   0%{transform:translateX(-130%) skewX(-20deg);}
