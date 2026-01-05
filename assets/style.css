@@ -22,7 +22,7 @@ Pater noster, qui es in caelis…
 /* Header */
 .site-header{
   position:sticky; top:0; z-index:1000;
-  background:rgba(246,241,231,.85);
+  background:rgba(244,241,234,.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -57,7 +57,7 @@ Pater noster, qui es in caelis…
 }
 .nav-link:hover{
   border-color:var(--line);
-  background-color:rgba(255,255,255,.55);
+  background-color:rgba(255,242,204,.65);
   background-image: linear-gradient(120deg, rgb(var(--brass-rgb) / 0), rgb(var(--brass-rgb) / .20), rgb(var(--brass-rgb) / 0));
   background-position: 120% 50%;
 }
@@ -71,7 +71,7 @@ Pater noster, qui es in caelis…
 .lang-toggle{display:flex; align-items:center; gap:.25rem; margin-left:.5rem}
 .lang-btn{
   border:1px solid var(--line);
-  background: rgba(255,255,255,.65);
+  background: rgba(255,242,204,.7);
   border-radius: 10px;
   padding:.4rem .65rem;
   font-weight:800;
@@ -87,7 +87,7 @@ Pater noster, qui es in caelis…
 .nav-toggle{
   display:none;
   border:1px solid var(--line);
-  background: rgba(255,255,255,.55);
+  background: rgba(255,242,204,.65);
   border-radius: 999px;
   padding:.6rem .8rem;
 }
@@ -153,7 +153,7 @@ Pater noster, qui es in caelis…
 .project-hero-copy::before{transform:translate(-50%, 4px)}
 .project-hero-facts::before{transform:translate(-50%, 16px)}
 .project-card-inner{
-  background: rgba(255,255,255,.9);
+  background: rgba(255,242,204,.92);
   border-radius: calc(var(--radius) - 8px);
   border:1px solid rgba(15,61,62,.08);
   padding: 1.35rem 1.5rem;
@@ -174,7 +174,7 @@ Pater noster, qui es in caelis…
   border-radius: var(--radius);
   border:1px solid var(--line);
   box-shadow: var(--shadow);
-  background:#fff;
+  background:#fff2cc;
 }
 .project-hero-facts{
   display:flex;
@@ -233,7 +233,7 @@ Pater noster, qui es in caelis…
   width:68px;
   height:68px;
   border-radius: calc(var(--radius) * 0.9);
-  background:#fff;
+  background:#fff2cc;
   border:1px solid var(--line);
   box-shadow: var(--shadow);
   display:grid;
@@ -278,14 +278,14 @@ Pater noster, qui es in caelis…
   letter-spacing:.32em;
   text-transform:uppercase;
   color:rgb(var(--navy-rgb) / .85);
-  background:#fff;
+  background:#fff2cc;
   padding:.2rem .9rem;
   border:1px solid rgb(var(--navy-rgb) / .25);
   border-radius:999px;
   box-shadow:0 6px 18px rgb(var(--navy-rgb) / .18);
 }
 .ledger-strip{
-  background: #fff;
+  background: #fff2cc;
   border-top:1px solid rgb(var(--navy-rgb) / .18);
   border-bottom:1px solid rgb(var(--navy-rgb) / .18);
   margin:1.5rem 0 2.2rem;
@@ -398,7 +398,7 @@ Pater noster, qui es in caelis…
   border-radius: var(--radius);
   border:1px solid var(--line);
   box-shadow: var(--shadow);
-  background:#fff;
+  background:#fff2cc;
   width:100%;
   max-width: 560px;
 }
@@ -436,7 +436,7 @@ Pater noster, qui es in caelis…
   border-radius: var(--radius);
   border:1px solid var(--line);
   box-shadow: var(--shadow);
-  background:#fff;
+  background:#fff2cc;
 }
 .workplace-cards .card{height:100%;}
 .workflow-grid{display:grid; gap:1.25rem; margin-top:1rem}
