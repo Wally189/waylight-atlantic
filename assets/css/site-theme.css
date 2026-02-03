@@ -1,23 +1,63 @@
 :root {
-  --wl-accent: #2e5f4f;
-  --wl-accent-soft: rgba(46, 95, 79, 0.12);
-  --ink: var(--wl-ink);
-  --paper: var(--wl-paper);
-  --paper-2: var(--wl-paper);
-  --teal: var(--wl-accent);
-  --teal-2: #1f3d2b;
-  --gold: #c9a44c;
+  --marian-blue: #1d70b8;
+  --paper: #f7f3ea;
+  --ink: #1b1b1b;
+  --muted: #5f5f5f;
+  --radius: 18px;
+  --shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  --max: 980px;
+  --header-h: 88px;
+  --footer-h: 140px;
+
+  --wl-paper: var(--paper);
+  --wl-ink: var(--ink);
+  --wl-muted: var(--muted);
+  --wl-rule: rgba(0, 0, 0, 0.12);
+  --wl-primary: var(--marian-blue);
+  --wl-primary-hover: #155a96;
+  --wl-primary-soft: rgba(29, 112, 184, 0.16);
+  --wl-accent: var(--marian-blue);
+  --wl-accent-soft: rgba(29, 112, 184, 0.12);
+  --wl-radius: var(--radius);
+  --wl-shadow: var(--shadow);
+
+  --paper-2: var(--paper);
+  --teal: var(--marian-blue);
+  --teal-2: #0f4c82;
+  --gold: #9bb7d1;
   --line: var(--wl-rule);
-  --muted: var(--wl-muted);
-  --navy-rgb: 47 74 125;
-  --brass-rgb: 201 164 76;
-  --shadow: 0 10px 30px rgb(var(--navy-rgb) / 0.12);
-  --paper-noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
-  --radius: var(--wl-radius);
-  --radius-sm: 10px;
-  --max: 1120px;
-  --card-opacity: 0.65;
-  --hero-bg-opacity: 0.5;
+  --navy-rgb: 29 112 184;
+  --brass-rgb: 155 183 209;
+  --paper-noise: none;
+  --radius-sm: 12px;
+  --card-opacity: 0.85;
+  --hero-bg-opacity: 0.3;
   --brand-blue: var(--wl-primary);
   --brand-green: var(--wl-accent);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  height: calc(100vh - var(--header-h) - var(--footer-h));
+  margin-top: var(--header-h);
+  margin-bottom: var(--footer-h);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2rem 0 2.5rem;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --header-h: 104px;
+    --footer-h: 180px;
+  }
 }
