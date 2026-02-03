@@ -21,12 +21,23 @@ Pater noster, qui es in caelis…
 
 /* Header */
 .site-header{
-  position:sticky; top:0; z-index:1000;
-  background:rgba(244,241,234,.88);
-  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--header-h);
+  background: rgba(247, 243, 234, 0.98);
   border-bottom: 1px solid var(--line);
 }
-.header-inner{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.9rem 0}
+.header-inner{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+  padding: 0.5rem 0;
+}
 
 .brand{display:flex; gap:.75rem; text-decoration:none; align-items:center}
 .brand-mark{
@@ -47,32 +58,26 @@ Pater noster, qui es in caelis…
   text-decoration:none;
   padding:.55rem .75rem;
   border-radius: 999px;
-  border:1px solid transparent;
+  border: 1px solid transparent;
   color: var(--ink);
   font-weight:600;
   font-size:.95rem;
-  background-size: 220% 220%;
-  background-position: 0% 50%;
-  transition: background-position 240ms ease, background-color 160ms ease, border-color 160ms ease;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 .nav-link:hover{
-  border-color:var(--line);
-  background-color:rgba(255,242,204,.65);
-  background-image: linear-gradient(120deg, rgb(var(--brass-rgb) / 0), rgb(var(--brass-rgb) / .20), rgb(var(--brass-rgb) / 0));
-  background-position: 120% 50%;
+  border-color: var(--line);
+  background-color: rgba(29, 112, 184, 0.08);
 }
-.nav-link.is-active{border-color:var(--teal); background-color:rgb(var(--navy-rgb) / .12)}
-.nav-cta{border-color:var(--gold); background-color:rgb(var(--brass-rgb) / .16)}
+.nav-link.is-active{border-color:var(--teal); background-color:rgba(29, 112, 184, 0.12)}
+.nav-cta{border-color:var(--teal); background-color:rgba(29, 112, 184, 0.14)}
 .nav-cta:hover{
-  background-color:rgb(var(--brass-rgb) / .24);
-  background-image: linear-gradient(120deg, rgb(var(--brass-rgb) / 0), rgb(var(--brass-rgb) / .26), rgb(var(--brass-rgb) / 0));
-  background-position: 120% 50%;
+  background-color: rgba(29, 112, 184, 0.2);
 }
 .lang-toggle{display:flex; align-items:center; gap:.25rem; margin-left:.5rem}
 .lang-btn{
   border:1px solid var(--line);
-  background: rgba(255,242,204,.7);
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
   padding:.4rem .65rem;
   font-weight:800;
   font-size:.9rem;
@@ -81,7 +86,7 @@ Pater noster, qui es in caelis…
 }
 .lang-btn.is-active{
   border-color: var(--teal);
-  background: rgb(var(--navy-rgb) / .12);
+  background: rgba(29, 112, 184, 0.12);
 }
 
 .nav-toggle{
@@ -102,16 +107,15 @@ Pater noster, qui es in caelis…
 .nav-toggle-bars::before{top:-6px}
 .nav-toggle-bars::after{top:6px}
 
+.site-nav{
+  justify-content: center;
+}
+
 /* Hero */
 .hero{
-  border-bottom: 1px solid var(--line);
-  padding: 3.5rem 0 2.5rem;
-  background-image:
-    radial-gradient(900px 400px at 10% 10%, rgba(198,161,91,.18), transparent 60%),
-    radial-gradient(900px 400px at 80% 20%, rgba(15,61,62,.12), transparent 60%),
-    var(--paper-noise);
-  background-repeat: no-repeat, no-repeat, repeat;
-  background-size: cover, cover, 260px 260px;
+  border-bottom: none;
+  padding: 2.5rem 0 2rem;
+  background: transparent;
 }
 .hero-grid{display:grid; gap:2rem; align-items:start}
 @media (min-width: 940px){
@@ -192,7 +196,7 @@ Pater noster, qui es in caelis…
 }
 .project-facts-list li{
   padding:.35rem 0;
-  border-bottom:1px dashed var(--line);
+  border-bottom:1px solid var(--line);
 }
 .project-facts-list li:last-child{border-bottom:none}
 .kicker{
@@ -204,11 +208,11 @@ Pater noster, qui es in caelis…
   text-transform:uppercase;
   font-size:.78rem;
   padding:.35rem .95rem;
-  border:1px solid rgb(var(--brass-rgb) / .45);
+  border:1px solid rgba(29, 112, 184, 0.35);
   border-radius: 999px;
-  background: linear-gradient(120deg, rgb(var(--brass-rgb) / .35), rgb(var(--brass-rgb) / .12));
+  background: rgba(29, 112, 184, 0.12);
   color: var(--teal-2);
-  box-shadow: 0 6px 14px rgb(var(--brass-rgb) / .28);
+  box-shadow: 0 6px 14px rgba(29, 112, 184, 0.18);
 }
 .kicker::before{
   content:"";
@@ -262,12 +266,10 @@ Pater noster, qui es in caelis…
 .utility-rail{
   position:relative;
   min-height:26px;
-  background-image:
-    repeating-linear-gradient(90deg, transparent, transparent 120px, rgba(var(--brass-rgb) / .28) 120px, rgba(var(--brass-rgb) / .28) 124px),
-    linear-gradient(120deg, rgb(var(--brass-rgb) / .4), rgb(var(--navy-rgb) / .2));
-  border-top:1px solid rgb(var(--navy-rgb) / .4);
-  border-bottom:1px solid rgb(var(--navy-rgb) / .4);
-  box-shadow: inset 0 -8px 16px rgb(var(--navy-rgb) / .08);
+  background: transparent;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  box-shadow: none;
 }
 .utility-rail--bottom{margin-top:2.5rem; margin-bottom:1.5rem;}
 .utility-rail-label{
@@ -285,11 +287,11 @@ Pater noster, qui es in caelis…
   box-shadow:0 6px 18px rgb(var(--navy-rgb) / .18);
 }
 .ledger-strip{
-  background: #fff2cc;
-  border-top:1px solid rgb(var(--navy-rgb) / .18);
-  border-bottom:1px solid rgb(var(--navy-rgb) / .18);
+  background: rgba(255, 255, 255, 0.85);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
   margin:1.5rem 0 2.2rem;
-  box-shadow: inset 0 12px 24px rgb(var(--navy-rgb) / .04);
+  box-shadow: none;
 }
 .ledger-inner{
   display:grid;
@@ -304,8 +306,8 @@ Pater noster, qui es in caelis…
   left:0; right:0;
   top:.6rem;
   height:1px;
-  background: repeating-linear-gradient(90deg, rgba(var(--navy-rgb) / .12), rgba(var(--navy-rgb) / .12) 10px, transparent 10px, transparent 20px);
-  opacity:.75;
+  background: var(--line);
+  opacity: 0.7;
 }
 .ledger-column{padding-top:1.1rem; display:flex; flex-direction:column; gap:.25rem}
 .ledger-column--wide{grid-column: span 2}
@@ -508,11 +510,11 @@ Pater noster, qui es in caelis…
   .freebie-cta-grid{grid-template-columns:minmax(0,1fr) minmax(0,.9fr)}
 }
 .freebie-card--cta{
-  background: linear-gradient(160deg, rgb(var(--brass-rgb) / .15), rgb(var(--navy-rgb) / .08)), rgba(255,255,255,.85);
+  background: rgba(255, 255, 255, 0.85);
 }
 .freebie-note{
-  background: rgba(31,58,86,.08);
-  border:1px dashed rgb(var(--navy-rgb) / .4);
+  background: rgba(29, 112, 184, 0.08);
+  border:1px solid var(--line);
   color:var(--teal-2);
 }
 
@@ -531,7 +533,7 @@ Pater noster, qui es in caelis…
 /* Sections */
 .section{
   padding: 2.5rem 0;
-  border-top:1px solid rgb(var(--brass-rgb) / .2);
+  border-top:1px solid var(--line);
   position:relative;
   z-index:0;
 }
@@ -539,8 +541,8 @@ Pater noster, qui es in caelis…
   content:"";
   position:absolute;
   inset:0;
-  background: linear-gradient(180deg, rgb(var(--brass-rgb) / .05), transparent 60%);
-  opacity:.9;
+  background: transparent;
+  opacity: 0;
   pointer-events:none;
   z-index:-1;
 }
@@ -550,19 +552,14 @@ Pater noster, qui es in caelis…
 .section-header h2{margin-bottom:.4rem}
 .section-header .lead{margin-top:.2rem}
 .section-contrast{
-  background: linear-gradient(180deg, rgba(15,61,62,.06), rgba(198,161,91,.08));
+  background: transparent;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   position:relative;
 }
 .section-contrast::before{display:none}
 .section-contrast::after{
-  content:"";
-  position:absolute;
-  left:0; right:0; bottom:0;
-  height:8px;
-  background: repeating-linear-gradient(90deg, rgba(var(--navy-rgb) / .08), rgba(var(--navy-rgb) / .08) 30px, transparent 30px, transparent 60px);
-  opacity:.4;
+  display: none;
 }
 @media (min-width: 860px){
   .two-col{grid-template-columns: 1.2fr .8fr; align-items:start}
@@ -596,7 +593,7 @@ Pater noster, qui es in caelis…
 .mini-grid{display:grid; gap:.75rem; grid-template-columns: 1fr}
 @media (min-width: 520px){.mini-grid{grid-template-columns: 1fr 1fr}}
 .mini{
-  border:1px dashed var(--line);
+  border:1px solid var(--line);
   border-radius: var(--radius-sm);
   padding:.8rem;
   background: rgba(255,255,255,.55);
@@ -608,8 +605,8 @@ Pater noster, qui es in caelis…
   margin-top:1rem;
   padding: .9rem;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(15,61,62,.25);
-  background: rgba(15,61,62,.06);
+  border: 1px solid var(--line);
+  background: rgba(29, 112, 184, 0.06);
 }
 
 /* Steps */
@@ -1074,4 +1071,170 @@ img[loading="lazy"].loaded {
 
 .mb-2-5 {
   margin-bottom: 2.5rem;
+}
+
+/* AlanWPGallagher restyle overrides */
+body {
+  background: transparent;
+}
+
+main {
+  scrollbar-gutter: stable both-edges;
+}
+
+.site-header .container {
+  height: 100%;
+}
+
+.wl-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-h);
+  margin-top: 0;
+  padding: 1.25rem 0 1.1rem;
+  border-top: 1px solid var(--line);
+  background: rgba(247, 243, 234, 0.98);
+}
+
+.wl-footer__grid {
+  width: min(var(--max), calc(100% - 2rem));
+  height: 100%;
+  align-items: center;
+}
+
+.wl-footer__family {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.hero-three-grid,
+.signature-band-inner,
+.hero-card,
+.card,
+.paper,
+.mini,
+.callout,
+.project-card,
+.project-card-inner,
+.pricing-card,
+.tier-card,
+.service-card,
+.pad,
+.wl-surface {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.cards {
+  gap: 1.25rem;
+}
+
+.card,
+.paper,
+.mini,
+.callout {
+  padding: 1.25rem;
+}
+
+.signature-band {
+  background: transparent;
+  border: none;
+}
+
+.project-card::before,
+.project-hero-copy::before,
+.project-hero-facts::before {
+  display: none;
+}
+
+.project-card-inner {
+  border-radius: calc(var(--radius) - 4px);
+  border: 1px solid var(--line);
+}
+
+.project-facts-list li {
+  border-bottom: 1px solid var(--line);
+}
+
+.section,
+.section-header,
+.hero,
+.signature-band,
+.testimonial,
+.faq,
+.projects-hero {
+  background: transparent;
+}
+
+.section {
+  padding: 1.5rem 0;
+}
+
+.hero-image {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary,
+.cta-primary,
+.wl-button {
+  background: var(--marian-blue);
+  border-color: var(--marian-blue);
+}
+
+.btn-ghost,
+.wl-button--ghost {
+  background: transparent;
+  color: var(--marian-blue);
+  border-color: var(--marian-blue);
+}
+
+.btn-ghost:hover,
+.wl-button--ghost:hover {
+  background: rgba(29, 112, 184, 0.12);
+}
+
+.nav-toggle,
+.nav-toggle:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.divider,
+.line,
+.track,
+.track-line {
+  display: none;
+}
+
+.project-card,
+.pricing-card,
+.tier-card,
+.service-card,
+.pad,
+.callout,
+.hero-card {
+  background-image: none;
+}
+
+.nav-link:focus-visible,
+.btn:focus-visible,
+.btn-primary:focus-visible,
+.btn-ghost:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(29, 112, 184, 0.4);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
