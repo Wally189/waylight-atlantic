@@ -26,7 +26,7 @@ Pater noster, qui es in caelis…
   left: 0;
   right: 0;
   z-index: 1000;
-  height: var(--header-h);
+  min-height: var(--header-h);
   background: #0b0c0c;
   border-bottom: 0;
 }
@@ -34,8 +34,8 @@ Pater noster, qui es in caelis…
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 1rem;
-  height: 100%;
+  gap: 0.75rem 1rem;
+  min-height: var(--header-h);
   padding: 0.5rem 0;
 }
 
@@ -53,7 +53,13 @@ Pater noster, qui es in caelis…
 .brand-title{display:block; font-weight:800; letter-spacing:.02em; color:#fff}
 .brand-tag{display:block; font-size:.9rem; color:#d6d5d5}
 
-.site-nav{display:flex; align-items:center; gap:.3rem; flex-wrap:wrap}
+.site-nav{
+  display:flex;
+  align-items:center;
+  gap:.25rem;
+  flex-wrap:wrap;
+  justify-content: flex-end;
+}
 .nav-link{
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -62,7 +68,7 @@ Pater noster, qui es in caelis…
   border: 0;
   color: #fff;
   font-weight:600;
-  font-size:1rem;
+  font-size:.95rem;
   transition: color 160ms ease, background-color 160ms ease;
 }
 .nav-link:hover{
@@ -107,8 +113,22 @@ Pater noster, qui es in caelis…
 .nav-toggle-bars::before{top:-6px}
 .nav-toggle-bars::after{top:6px}
 
-.site-nav{
-  justify-content: center;
+@media (max-width: 1100px) {
+  .header-inner{
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+  }
+  .brand{
+    grid-column: 1 / 2;
+  }
+  .lang-toggle{
+    grid-column: 2 / 3;
+    justify-self: end;
+  }
+  .site-nav{
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
 }
 
 /* Hero */
@@ -148,6 +168,14 @@ Pater noster, qui es in caelis…
 @media (min-width: 900px) {
   .hero-three-grid {
     grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr) minmax(0, 1fr);
+  }
+}
+@media (max-width: 1100px) {
+  .hero-three-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+  .hero-three-right {
+    grid-column: 1 / -1;
   }
 }
 @media (max-width: 900px) {
@@ -243,7 +271,7 @@ Pater noster, qui es in caelis…
   display:inline-block;
 }
 .signature-band{
-  background: linear-gradient(120deg, rgb(var(--navy-rgb) / .08), rgb(var(--brass-rgb) / .08));
+  background: #ffffff;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
   margin:2.5rem 0;
@@ -257,10 +285,10 @@ Pater noster, qui es in caelis…
 .signature-icon{
   width:68px;
   height:68px;
-  border-radius: calc(var(--radius) * 0.9);
-  background:#fff2cc;
+  border-radius: 0;
+  background: #f3f2f1;
   border:1px solid var(--line);
-  box-shadow: var(--shadow);
+  box-shadow: none;
   display:grid;
   place-items:center;
   font-weight:800;
