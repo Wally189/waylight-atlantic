@@ -1,15 +1,15 @@
 :root {
-  --wl-paper: #f4f1ea;
-  --wl-ink: #1e2a44;
-  --wl-muted: #5b4632;
-  --wl-rule: rgba(90, 31, 46, 0.16);
-  --wl-primary: #2f4a7d;
-  --wl-primary-hover: #1e2a44;
-  --wl-primary-soft: rgba(47, 74, 125, 0.12);
-  --wl-accent: #b08d3a;
-  --wl-accent-soft: rgba(176, 141, 58, 0.14);
-  --wl-radius: 12px;
-  --wl-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --wl-paper: #f3f2f1;
+  --wl-ink: #0b0c0c;
+  --wl-muted: #505a5f;
+  --wl-rule: rgba(11, 12, 12, 0.2);
+  --wl-primary: #1d70b8;
+  --wl-primary-hover: #003078;
+  --wl-primary-soft: rgba(29, 112, 184, 0.12);
+  --wl-accent: #1d70b8;
+  --wl-accent-soft: rgba(29, 112, 184, 0.12);
+  --wl-radius: 4px;
+  --wl-shadow: none;
 
   --wl-space-1: 0.25rem;
   --wl-space-2: 0.5rem;
@@ -20,8 +20,8 @@
   --wl-space-7: 3rem;
   --wl-space-8: 4rem;
 
-  --wl-font-body: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --wl-font-heading: "Georgia", "Times New Roman", serif;
+  --wl-font-body: "Helvetica Neue", Arial, sans-serif;
+  --wl-font-heading: "Helvetica Neue", Arial, sans-serif;
 
   --wl-step--1: 0.875rem;
   --wl-step-0: 1rem;
@@ -47,19 +47,6 @@ html {
   height: 100%;
   scroll-behavior: smooth;
   background: var(--wl-paper);
-}
-
-html::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("../img/irish-cross.svg");
-  background-repeat: no-repeat;
-  background-position: center 20%;
-  background-size: min(70vw, 520px);
-  opacity: 0.08;
-  pointer-events: none;
-  z-index: -1;
 }
 
 body {
@@ -121,12 +108,12 @@ a.button {
   justify-content: center;
   gap: var(--wl-space-2);
   padding: 0.65rem 1.4rem;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1px solid var(--wl-primary);
   background: var(--wl-primary);
   color: #ffffff;
   font: inherit;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
   text-decoration: none;
   cursor: pointer;
@@ -181,7 +168,7 @@ a.button:focus-visible {
 }
 
 .wl-stack > * + * { margin-top: var(--wl-space-4); }
-.wl-surface { background: #fff2cc; border: 1px solid var(--wl-rule); border-radius: var(--wl-radius); }
+.wl-surface { background: #ffffff; border: 1px solid var(--wl-rule); border-radius: var(--wl-radius); }
 
 .wl-footer {
   margin-top: var(--wl-space-7);
