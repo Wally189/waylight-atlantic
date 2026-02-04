@@ -1,12 +1,12 @@
 :root {
   --marian-blue: #1d70b8;
-  --paper: #f7f3ea;
-  --ink: #1b1b1b;
-  --muted: #5f5f5f;
-  --radius: 18px;
-  --shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-  --max: 980px;
-  --header-h: 88px;
+  --paper: #f3f2f1;
+  --ink: #0b0c0c;
+  --muted: #505a5f;
+  --radius: 4px;
+  --shadow: none;
+  --max: 1120px;
+  --header-h: 72px;
   --footer-h: 140px;
 
   --wl-paper: var(--paper);
@@ -41,18 +41,11 @@ body {
   height: 100%;
 }
 
-body {
-  overflow: hidden;
-}
-
 main {
   position: relative;
-  height: calc(100vh - var(--header-h) - var(--footer-h));
-  margin-top: var(--header-h);
-  margin-bottom: var(--footer-h);
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 2rem 0 2.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 2.5rem 0 3rem;
 }
 
 @media (max-width: 720px) {
