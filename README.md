@@ -13,3 +13,11 @@ Waylight family notes:
   - the-catholic-experiment: liturgical purple
   - playtrix-console: cool cyan/steel
   - playtrix-decades: warm terracotta
+
+## Pre-deploy checks
+
+Run the repository checks before publishing:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\predeploy-checks.ps1
+```

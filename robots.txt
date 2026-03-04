@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.waylight-atlantic.co.uk/sitemap.xml
+
