@@ -43,7 +43,7 @@
 
   updateDateTime();
   if (datetimeNodes.length > 0) {
-    window.setInterval(updateDateTime, 1000);
+    window.setInterval(updateDateTime, 60000);
   }
 
   const getCurrentFile = () => {
@@ -155,6 +155,86 @@
   if (!reduceMotion) {
     updateParallax();
   }
+
+  const initJournalAccordion = () => {
+    const entries = Array.from(document.querySelectorAll(".journal-entry"));
+    if (entries.length === 0) {
+      return;
+    }
+
+    const controls = [];
+    entries.forEach((entry, index) => {
+      const layout = entry.querySelector(".chapter-layout");
+      const article = entry.querySelector(".chapter-content");
+      const heading = entry.querySelector("h3");
+      if (!layout || !article || !heading) {
+        return;
+      }
+
+      const entryId = article.id || `journal-entry-${index + 1}`;
+      if (!article.id) {
+        article.id = entryId;
+      }
+      const layoutId = `${entryId}-body`;
+      layout.id = layoutId;
+
+      const toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.className = "journal-entry-toggle";
+      toggle.setAttribute("aria-controls", layoutId);
+      toggle.textContent = heading.textContent || `Entry ${index + 1}`;
+      entry.insertBefore(toggle, layout);
+
+      const setExpanded = (isExpanded) => {
+        toggle.setAttribute("aria-expanded", String(isExpanded));
+        layout.hidden = !isExpanded;
+        entry.classList.toggle("is-open", isExpanded);
+      };
+
+      const closeOthers = () => {
+        controls.forEach((control) => {
+          if (control.entry !== entry) {
+            control.setExpanded(false);
+          }
+        });
+      };
+
+      toggle.addEventListener("click", () => {
+        const shouldExpand = toggle.getAttribute("aria-expanded") !== "true";
+        if (shouldExpand) {
+          closeOthers();
+        }
+        setExpanded(shouldExpand);
+      });
+
+      controls.push({ entry, article, setExpanded });
+    });
+
+    if (controls.length === 0) {
+      return;
+    }
+
+    controls.forEach((control, index) => {
+      control.setExpanded(index === 0);
+    });
+
+    const openFromHash = () => {
+      const hashId = window.location.hash ? window.location.hash.slice(1) : "";
+      if (!hashId) {
+        return;
+      }
+      const target = controls.find((control) => control.article.id === hashId);
+      if (!target) {
+        return;
+      }
+      controls.forEach((control) => {
+        control.setExpanded(control === target);
+      });
+    };
+
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+  };
 
   const initPricingCurrency = () => {
     const widget = document.querySelector("[data-currency-widget]");
@@ -325,6 +405,7 @@
     applyCurrency(preferred);
   };
 
+  initJournalAccordion();
   initPricingCurrency();
 
   window.addEventListener("scroll", scheduleFrame, { passive: true });

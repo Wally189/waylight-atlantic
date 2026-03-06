@@ -48,6 +48,42 @@ a:focus-visible {
   color: var(--accent);
 }
 
+@keyframes link-shimmer {
+  from {
+    background-position: 115% 0;
+  }
+  to {
+    background-position: -35% 0;
+  }
+}
+
+main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.footer-btn) {
+  color: var(--primary-navy);
+  font-weight: 600;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1.7px;
+  text-underline-offset: 0.16em;
+  text-decoration-color: color-mix(in srgb, var(--line-strong) 78%, transparent);
+  background-image: linear-gradient(
+    110deg,
+    transparent 0%,
+    color-mix(in srgb, var(--accent-sunlight) 58%, transparent) 42%,
+    transparent 64%
+  );
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-position: 115% 0;
+  transition: color 170ms ease, text-decoration-color 170ms ease, background-size 220ms ease;
+}
+
+main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.footer-btn):hover,
+main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.footer-btn):focus-visible {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+  background-size: 240% 100%;
+  animation: link-shimmer 620ms ease-out 1;
+}
+
 img {
   display: block;
   width: 100%;
@@ -752,6 +788,49 @@ h4 {
   padding-top: var(--space-5);
 }
 
+.journal-index {
+  margin-top: var(--space-4);
+}
+
+.journal-entry {
+  padding-top: var(--space-3);
+}
+
+.journal-entry-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--secondary-sky) 24%, var(--paper));
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.93rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: left;
+  padding: 0.72rem 0.85rem;
+  cursor: pointer;
+  margin-bottom: 0.85rem;
+}
+
+.journal-entry-toggle::after {
+  content: "Open";
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.journal-entry-toggle[aria-expanded="true"]::after {
+  content: "Close";
+}
+
+.journal-entry .chapter-layout[hidden] {
+  display: none;
+}
+
 .chapter-layout {
   display: grid;
   grid-template-columns: 74px minmax(250px, 35%) minmax(0, 1fr);
@@ -825,7 +904,8 @@ h4 {
 }
 
 .contact-help,
-.contact-response {
+.contact-response,
+.contact-legal {
   max-width: 760px;
   margin: 0;
   color: var(--ink-soft);
@@ -845,6 +925,14 @@ h4 {
 
 .contact-response {
   margin-top: var(--space-2);
+}
+
+.contact-legal {
+  font-size: 0.84rem;
+}
+
+.contact-legal a {
+  font-weight: 600;
 }
 
 .contact-field {
@@ -1273,9 +1361,81 @@ h4 {
   }
 }
 
+.workbench-table-wrap {
+  margin-top: var(--space-2);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.workbench-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+  font-size: 0.94rem;
+}
+
+.workbench-table th,
+.workbench-table td {
+  padding: 0.74rem 0.85rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  text-align: left;
+  color: var(--ink-soft);
+}
+
+.workbench-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: color-mix(in srgb, var(--secondary-sky) 36%, var(--paper));
+  color: var(--ink);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.workbench-table tbody th {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.workbench-table tbody tr:last-child th,
+.workbench-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.workbench-links {
+  white-space: nowrap;
+}
+
+.workbench-links a + a {
+  margin-left: 0.65rem;
+}
+
+.workbench-hero {
+  background: var(--paper);
+  background-image: none;
+}
+
+.workbench-hero img {
+  box-shadow: none;
+}
+
+a[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.footer-btn) {
+    transition: none;
+    animation: none;
   }
 
   .js [data-reveal] {
