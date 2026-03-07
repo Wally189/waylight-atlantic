@@ -170,9 +170,14 @@
       });
     };
 
-    const defaultAccordion = accordions.find((accordion) => accordion.hasAttribute("data-default-open")) || accordions[0];
-    closeOthers(defaultAccordion);
-    defaultAccordion.open = true;
+    const shouldStartClosed = accordions.some((accordion) => accordion.hasAttribute("data-start-closed"));
+    if (shouldStartClosed) {
+      closeOthers(null);
+    } else {
+      const defaultAccordion = accordions.find((accordion) => accordion.hasAttribute("data-default-open")) || accordions[0];
+      closeOthers(defaultAccordion);
+      defaultAccordion.open = true;
+    }
 
     accordions.forEach((accordion) => {
       const summary = accordion.querySelector("summary");

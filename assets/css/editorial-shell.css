@@ -57,7 +57,7 @@ a:focus-visible {
   }
 }
 
-main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.footer-btn) {
+main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.pricing-detail-toggle):not(.footer-btn) {
   color: var(--primary-navy);
   font-weight: 700;
   text-decoration-line: underline;
@@ -77,8 +77,8 @@ main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link)
   transition: color 170ms ease, text-decoration-color 170ms ease, background-size 220ms ease, text-shadow 170ms ease;
 }
 
-main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.footer-btn):hover,
-main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.footer-btn):focus-visible {
+main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.pricing-detail-toggle):not(.footer-btn):hover,
+main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.pricing-detail-toggle):not(.footer-btn):focus-visible {
   color: var(--accent);
   text-decoration-color: var(--accent);
   text-shadow: 0 0 0.52rem color-mix(in srgb, var(--accent-sunlight) 38%, transparent);
@@ -1343,7 +1343,7 @@ h4 {
 .footer-inner {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  align-items: center;
+  align-items: start;
   gap: var(--space-2);
   padding: var(--space-3) 0;
 }
@@ -1383,6 +1383,7 @@ h4 {
 .footer-tagline {
   margin: 0;
   justify-self: center;
+  align-self: center;
   text-align: center;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
@@ -1935,7 +1936,7 @@ a[aria-disabled="true"] {
     scroll-behavior: auto;
   }
 
-  main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.footer-btn) {
+  main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.pricing-detail-toggle):not(.footer-btn) {
     transition: none;
     animation: none;
   }
