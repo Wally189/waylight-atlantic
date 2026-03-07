@@ -57,5 +57,6 @@
 
   // Manual formatting everywhere
   "html.format.enable": false,
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "default",
+  "chatgpt.openOnStartup": true
 }

@@ -3,21 +3,21 @@
 <head>
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>WayLight Atlantic | Workbench</title>
+  <title>Waylight Atlantic | Workbench</title>
   <meta name='description' content='A live workbench: current projects, status, and practical working resources.' />
   <link rel='canonical' href='https://www.waylight-atlantic.co.uk/workbench.html' />
   <meta name='robots' content='index,follow,max-image-preview:large' />
   <!-- SEO META START -->
   <meta property='og:locale' content='en_GB' />
   <meta property='og:type' content='website' />
-  <meta property='og:title' content='WayLight Atlantic | Workbench' />
+  <meta property='og:title' content='Waylight Atlantic | Workbench' />
   <meta property='og:description' content='A live workbench: current projects, status, and practical working resources.' />
   <meta property='og:url' content='https://www.waylight-atlantic.co.uk/workbench.html' />
-  <meta property='og:site_name' content='WayLight Atlantic' />
+  <meta property='og:site_name' content='Waylight Atlantic' />
   <meta property='og:image' content='https://www.waylight-atlantic.co.uk/assets/images/WaylightSeaside.png' />
-  <meta property='og:image:alt' content='WayLight Atlantic' />
+  <meta property='og:image:alt' content='Waylight Atlantic' />
   <meta name='twitter:card' content='summary_large_image' />
-  <meta name='twitter:title' content='WayLight Atlantic | Workbench' />
+  <meta name='twitter:title' content='Waylight Atlantic | Workbench' />
   <meta name='twitter:description' content='A live workbench: current projects, status, and practical working resources.' />
   <meta name='twitter:image' content='https://www.waylight-atlantic.co.uk/assets/images/WaylightSeaside.png' />
   <!-- SEO META END -->
@@ -34,7 +34,7 @@
 
   <header class='site-header' id='top'>
     <div class='site-width header-inner'>
-      <h1 class='wordmark'>WAYLIGHT ATLANTIC</h1>
+      <p class='wordmark'><a href='index.html'>Waylight Atlantic</a></p>
       <nav class='site-nav' aria-label='Primary'>
         <a href='index.html'>Home</a>
         <a href='pricing.html'>Services &amp; Pricing</a>
@@ -60,14 +60,12 @@
       <div class='page-intro-grid'>
         <div>
           <p class='kicker'>Live operations and development pipeline</p>
-          <h2>The WayLight Workbench</h2>
+          <h1 class='page-title'>The Waylight Workbench</h1>
         </div>
         <div>
-          <p>Welcome to the WayLight Workbench</p>
-          <p>Below you will be able to view the current WayLight pipeline and upcoming projects. You will also find details on availability, methods, tools, and the WayLight business Journal.</p>
-          <p>All methods shown on this website can be implemented independently. WayLight provides delivery support where organisations prefer to delegate the work and move faster.</p>
-      
-          <p>Some client details are intentionally anonymised so the process can be shared without exposing private information.</p>
+          <p>The workbench shows current reference builds, active demonstration work, and the supporting material behind the Waylight delivery model.</p>
+          <p>It is intended to be transparent without feeling internal: enough detail to show what is live, what is available for discussion, and how delivery decisions are made.</p>
+          <p>Some client context is intentionally anonymised so methods can be shared without exposing private information.</p>
         </div>
       </div>
     </section>
@@ -88,51 +86,245 @@
               <th scope='col'>Target</th>
               <th scope='col'>Links (Demo + Current Status)</th>
               <th scope='col'>Notes</th>
+              <th scope='col'>Case Study</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr class='workbench-project-row'>
               <th scope='row'>Waylight Build - Business Site</th>
               <td>Website Build</td>
               <td>Monthly Maintenance</td>
               <td>Completed</td>
               <td>Monthly maintenance plan and bi-annual recertification</td>
               <td>Autumn 2025</td>
-              <td class="workbench-links">
-  <a href="https://www.waylight-atlantic.co.uk" target="_blank" rel="noopener">Demo</a><br>
-  <span class="disabled-link" aria-disabled="true">Live</span>
-</td>
-<td>Startup and launch complete</td>
+              <td class='workbench-links'>
+                <a href='https://www.waylight-atlantic.co.uk' target='_blank' rel='noopener'>Live site</a><br />
+                <span class='disabled-link' aria-disabled='true'>Reference build</span>
+              </td>
+              <td>Startup and launch complete</td>
+              <td class='workbench-case-col'>
+                <button type='button' class='workbench-case-toggle' data-case-toggle aria-expanded='false' aria-controls='case-study-business-site'>
+                  <span class='workbench-case-toggle-label'>View</span>
+                </button>
+              </td>
             </tr>
-            <tr>
+            <tr class='workbench-case-row' id='case-study-business-site' hidden>
+              <td colspan='9'>
+                <div class='workbench-case-panel' role='region' aria-label='Case study for Waylight Build - Business Site'>
+                  <dl class='workbench-case-grid'>
+                    <div class='workbench-case-item'>
+                      <dt>Overview</dt>
+                      <dd>
+                        A compact business website designed as the reference implementation for the Waylight Atlantic model.
+                        The site demonstrates the principles used in client projects: calm structure, low cognitive load, and long-term maintainability through static delivery.
+                      </dd>
+                    </div>
+                    <div class='workbench-case-item'>
+                      <dt>Brief / Problem</dt>
+                      <dd>
+                        There was no previous site. The challenge was to create a working reference model for the Waylight approach.
+                        The site needed to demonstrate how a small organisation can maintain a professional web presence without complex systems, heavy frameworks, or ongoing technical overhead.
+                      </dd>
+                    </div>
+                    <div class='workbench-case-item'>
+                      <dt>What was changed</dt>
+                      <dd>
+                        <ul>
+                          <li>Designed a clear page hierarchy</li>
+                          <li>Established a repeatable layout system</li>
+                          <li>Created governance and workbench sections</li>
+                          <li>Structured services around practical pathways</li>
+                          <li>Implemented static delivery for stability</li>
+                        </ul>
+                      </dd>
+                    </div>
+                    <div class='workbench-case-item'>
+                      <dt>Logic and method applied</dt>
+                      <dd>
+                        The site was built using the Waylight sequence:
+                        <ol>
+                          <li>Discovery - clarify purpose and audience</li>
+                          <li>Simplification - reduce structure to essentials</li>
+                          <li>Lightweight implementation - static architecture</li>
+                          <li>Governance - create maintainable documentation</li>
+                        </ol>
+                      </dd>
+                    </div>
+                    <div class='workbench-case-item workbench-case-item--media'>
+                      <dt>Prior state</dt>
+                      <dd><div class='workbench-case-placeholder' role='img' aria-label='No predecessor site was in place before this build'>No predecessor site was in place before this build.</div></dd>
+                    </div>
+                    <div class='workbench-case-item workbench-case-item--media'>
+                      <dt>Current state</dt>
+                      <dd><div class='workbench-case-placeholder' role='img' aria-label='The live site linked above is the current reference implementation'>The live site linked above is the current reference implementation.</div></dd>
+                    </div>
+                    <div class='workbench-case-item workbench-case-item--full'>
+                      <dt>Outcome</dt>
+                      <dd>A production-ready reference site that demonstrates the Waylight Atlantic approach to calm, maintainable web design for small organisations.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+            </tr>
+            <tr class='workbench-project-row'>
               <th scope='row'>Waylight Build - Founder - Personal Website</th>
               <td>Website Build</td>
               <td>Monthly Maintenance</td>
               <td>Completed</td>
               <td>Monthly maintenance plan and bi-annual recertification</td>
               <td>Autumn 2025</td>
-              <td class='workbench-links'><a href='https://www.alanwpgallagher.info' target='_blank' rel='noopener'>Demo</a><br><span class='disabled-link' aria-disabled='true'>Live</span></td>
+              <td class='workbench-links'><a href='https://www.alanwpgallagher.info' target='_blank' rel='noopener'>Live site</a><br><span class='disabled-link' aria-disabled='true'>Reference build</span></td>
               <td>Operational reference build</td>
+              <td class='workbench-case-col'>
+                <button type='button' class='workbench-case-toggle' data-case-toggle aria-expanded='false' aria-controls='case-study-founder-site'>
+                  <span class='workbench-case-toggle-label'>View</span>
+                </button>
+              </td>
             </tr>
-            <tr>
+            <tr class='workbench-case-row' id='case-study-founder-site' hidden>
+              <td colspan='9'>
+                <div class='workbench-case-panel' role='region' aria-label='Case study for Waylight Build - Founder - Personal Website'>
+                  <dl class='workbench-case-grid'>
+                    <div class='workbench-case-item'>
+                      <dt>Overview</dt>
+                      <dd>A personal professional site designed to present experience, thinking, and projects in a clear and structured format.</dd>
+                    </div>
+                    <div class='workbench-case-item'>
+                      <dt>Brief / Problem</dt>
+                      <dd>The aim was to create a personal reference site that could present professional work and ideas without the complexity of modern portfolio platforms.</dd>
+                    </div>
+                    <div class='workbench-case-item'>
+                      <dt>What was changed</dt>
+                      <dd>
+                        <ul>
+                          <li>Clear professional profile</li>
+                          <li>Structured presentation of work</li>
+                          <li>Simple publishing format for articles</li>
+                          <li>Long-term maintainable architecture</li>
+                        </ul>
+                      </dd>
+                    </div>
+                    <div class='workbench-case-item'>
+                      <dt>Logic and method applied</dt>
+                      <dd>The site uses the same structural principles as the <a href='https://www.waylight-atlantic.co.uk/' target='_blank' rel='noopener'>Waylight Atlantic</a> model: calm layout, minimal technical overhead, and clear information hierarchy.</dd>
+                    </div>
+                    <div class='workbench-case-item workbench-case-item--media'>
+                      <dt>Prior state</dt>
+                      <dd><div class='workbench-case-placeholder' role='img' aria-label='No earlier public version is published in this summary'>No earlier public version is published in this summary.</div></dd>
+                    </div>
+                    <div class='workbench-case-item workbench-case-item--media'>
+                      <dt>Current state</dt>
+                      <dd><div class='workbench-case-placeholder' role='img' aria-label='The linked site shows the current published structure and presentation'>The linked site shows the current published structure and presentation.</div></dd>
+                    </div>
+                    <div class='workbench-case-item workbench-case-item--full'>
+                      <dt>Outcome</dt>
+                      <dd>A stable personal site providing a clear professional profile and a place to publish work, ideas, and projects without reliance on external platforms.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+            </tr>
+            <tr class='workbench-project-row'>
               <th scope='row'>CofE Parish Website Demo</th>
               <td>Website Refresh</td>
-              <td>Proposal</td>
-              <td>Awaiting Approval</td>
-              <td>Meet with client to discuss finalisation</td>
+              <td>Demonstration</td>
+              <td>Available for discussion</td>
+              <td>Review fit, scope, and adaptation requirements</td>
               <td>Winter 2025</td>
-              <td class='workbench-links'><a href='https://wally189.github.io/GenericCofEParishWebsite' target='_blank' rel='noopener'>Demo</a><br><span class='disabled-link' aria-disabled='true'>Live</span></td>
-              <td>Demo only at present</td>
+              <td class='workbench-links'><a href='https://wally189.github.io/GenericCofEParishWebsite' target='_blank' rel='noopener'>Demonstration build</a><br><span class='disabled-link' aria-disabled='true'>No client deployment</span></td>
+              <td>Reference design for discussion and adaptation</td>
+              <td class='workbench-case-col'>
+                <button type='button' class='workbench-case-toggle' data-case-toggle aria-expanded='false' aria-controls='case-study-parish-demo'>
+                  <span class='workbench-case-toggle-label'>View</span>
+                </button>
+              </td>
             </tr>
-            <tr>
-              <th scope='row'>School Website Demo </th>
+            <tr class='workbench-case-row' id='case-study-parish-demo' hidden>
+              <td colspan='9'>
+                <div class='workbench-case-panel' role='region' aria-label='Case study for CofE Parish Website Demo'>
+                  <dl class='workbench-case-grid'>
+                    <div class='workbench-case-item'>
+                      <dt>Overview</dt>
+                      <dd>A parish website refresh demonstration designed to improve access to service times, contact routes, and core community information.</dd>
+                    </div>
+                    <div class='workbench-case-item'>
+                      <dt>Brief / Problem</dt>
+                      <dd>Existing church-style sites often suffer from fragmented menus, outdated notices, and difficult mobile readability.</dd>
+                    </div>
+                    <div class='workbench-case-item'>
+                      <dt>What was changed</dt>
+                      <dd>Simplified navigation, improved event/service discoverability, clearer content grouping, and stronger mobile flow.</dd>
+                    </div>
+                    <div class='workbench-case-item'>
+                      <dt>Logic and method applied</dt>
+                      <dd>Used audience-first sequencing: visitors find worship times, location, and contacts first, then secondary information.</dd>
+                    </div>
+                    <div class='workbench-case-item workbench-case-item--media'>
+                      <dt>Prior state</dt>
+                      <dd><div class='workbench-case-placeholder' role='img' aria-label='Comparative source material is not published in this summary'>Comparative source material is not published in this summary.</div></dd>
+                    </div>
+                    <div class='workbench-case-item workbench-case-item--media'>
+                      <dt>Current state</dt>
+                      <dd><div class='workbench-case-placeholder' role='img' aria-label='The linked demonstration shows the current layout and information model'>The linked demonstration shows the current layout and information model.</div></dd>
+                    </div>
+                    <div class='workbench-case-item workbench-case-item--full'>
+                      <dt>Outcome</dt>
+                      <dd>A client-facing demonstration build that shows a calmer, clearer parish information structure for discussion and adaptation.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+            </tr>
+            <tr class='workbench-project-row'>
+              <th scope='row'>School Website Demo</th>
               <td>Website Rebuild</td>
-              <td>Proposal</td>
-              <td>Awaiting Approval</td>
-              <td>Meet with client to discuss finalisation</td>
+              <td>Demonstration</td>
+              <td>Available for discussion</td>
+              <td>Review fit, scope, and adaptation requirements</td>
               <td>Spring 2026</td>
-              <td class='workbench-links'><a href='https://wally189.github.io/GenericNationalSchoolWebsite/'>Demo</a><br><span class='disabled-link' aria-disabled='true'>Live</span></td>
-              <td>Demo only at present</td>
+              <td class='workbench-links'><a href='https://wally189.github.io/GenericNationalSchoolWebsite/' target='_blank' rel='noopener'>Demonstration build</a><br><span class='disabled-link' aria-disabled='true'>No client deployment</span></td>
+              <td>Reference design for discussion and adaptation</td>
+              <td class='workbench-case-col'>
+                <button type='button' class='workbench-case-toggle' data-case-toggle aria-expanded='false' aria-controls='case-study-school-demo'>
+                  <span class='workbench-case-toggle-label'>View</span>
+                </button>
+              </td>
+            </tr>
+            <tr class='workbench-case-row' id='case-study-school-demo' hidden>
+              <td colspan='9'>
+                <div class='workbench-case-panel' role='region' aria-label='Case study for School Website Demo'>
+                  <dl class='workbench-case-grid'>
+                    <div class='workbench-case-item'>
+                      <dt>Overview</dt>
+                      <dd>A school website rebuild demo focused on parent usability, policy access, and clearer communication pathways.</dd>
+                    </div>
+                    <div class='workbench-case-item'>
+                      <dt>Brief / Problem</dt>
+                      <dd>Common pain points included difficult policy discovery, inconsistent page formatting, and unclear parent journey paths.</dd>
+                    </div>
+                    <div class='workbench-case-item'>
+                      <dt>What was changed</dt>
+                      <dd>Reworked information hierarchy, standardised section templates, and clarified key routes for families and staff.</dd>
+                    </div>
+                    <div class='workbench-case-item'>
+                      <dt>Logic and method applied</dt>
+                      <dd>Applied a maintainable content model so updates can be handled by schools without heavy technical dependency.</dd>
+                    </div>
+                    <div class='workbench-case-item workbench-case-item--media'>
+                      <dt>Prior state</dt>
+                      <dd><div class='workbench-case-placeholder' role='img' aria-label='Comparative source material is not published in this summary'>Comparative source material is not published in this summary.</div></dd>
+                    </div>
+                    <div class='workbench-case-item workbench-case-item--media'>
+                      <dt>Current state</dt>
+                      <dd><div class='workbench-case-placeholder' role='img' aria-label='The linked demonstration shows the current family-facing structure and navigation'>The linked demonstration shows the current family-facing structure and navigation.</div></dd>
+                    </div>
+                    <div class='workbench-case-item workbench-case-item--full'>
+                      <dt>Outcome</dt>
+                      <dd>A practical proposal demo showing how a school site can become clearer for families while staying simple to maintain.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -163,12 +355,13 @@
 
     <section class='site-width highlights' data-reveal aria-labelledby='workbench-shelves-title'>
       <p class='kicker'>Workbench shelves</p>
-      <h3 id='workbench-shelves-title'>Linked resources in progress</h3>
+      <h3 id='workbench-shelves-title'>Linked resources</h3>
       <div class='highlight-grid' role='list'>
         <blockquote class='highlight' role='listitem'><strong><a href='journal.html'>Business Journal</a></strong><br />Running notes on weekly decisions, delivery patterns, and lessons worth keeping.</blockquote>
         <blockquote class='highlight' role='listitem'><strong><a href='tools.html'>Tools &amp; Stack</a></strong><br />A practical list of core tools, how they are used, and where they fit in delivery work.</blockquote>
         <blockquote class='highlight' role='listitem'><strong><a href='methods.html'>Methods</a></strong><br />Working methods for planning, implementation, checks, and handover in calm, repeatable steps.</blockquote>
         <blockquote class='highlight' role='listitem'><strong><a href='pricing.html'>Services &amp; Pricing</a></strong><br />Clear package structure, support options, and practical response expectations.</blockquote>
+        <blockquote class='highlight' role='listitem'><strong><a href='templates.html'>Templates</a></strong><br />Starter template routes for predefined website structures with optional support pathways.</blockquote>
       </div>
     </section>
   </main>
@@ -181,12 +374,14 @@
         <a href='contact.html' class='footer-btn'>Contact</a>
       </nav>
       <p class='footer-tagline'>Simple systems for a digital world.</p>
-      <p class='footer-meta'>All rights reserved 2026. <a href='gdpr.html'>GDPR</a> | <a href='privacy.html'>Privacy</a> | <span data-datetime>Loading date and time...</span></p>
+
+      <div class="waylight-legal-block" data-waylight-legal>
+        <p class="footer-meta"><span data-datetime>Loading date and time...</span></p>
+        <p class="waylight-legal-links"><a href="gdpr.html">GDPR</a> | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
+        <p class="waylight-legal-location">Bristol, United Kingdom</p>
+        <p class="waylight-legal-copyright">&#169; 2026 <a href="https://www.waylight-atlantic.co.uk/" rel="noopener">Waylight Atlantic</a></p>
+      </div>
     </div>
   </footer>
 </body>
 </html>
-
-
-
-

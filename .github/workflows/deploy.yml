@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - copilot/**
   workflow_dispatch:
 
 permissions:
@@ -13,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -26,13 +25,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate source of truth
+        shell: pwsh
+        run: ./scripts/predeploy-checks.ps1 -Root .
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload artifact
+      - name: Upload root site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'public'
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment

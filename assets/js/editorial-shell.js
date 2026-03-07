@@ -156,14 +156,217 @@
     updateParallax();
   }
 
+  const initMethodAccordions = () => {
+    const accordions = Array.from(document.querySelectorAll(".method-accordion"));
+    if (accordions.length === 0) {
+      return;
+    }
+
+    const closeOthers = (active) => {
+      accordions.forEach((accordion) => {
+        if (accordion !== active) {
+          accordion.open = false;
+        }
+      });
+    };
+
+    const defaultAccordion = accordions.find((accordion) => accordion.hasAttribute("data-default-open")) || accordions[0];
+    closeOthers(defaultAccordion);
+    defaultAccordion.open = true;
+
+    accordions.forEach((accordion) => {
+      const summary = accordion.querySelector("summary");
+      if (!summary) {
+        return;
+      }
+
+      summary.addEventListener("click", (event) => {
+        event.preventDefault();
+        const shouldOpen = !accordion.open;
+        if (shouldOpen) {
+          closeOthers(accordion);
+          accordion.open = true;
+          return;
+        }
+        accordion.open = false;
+      });
+    });
+
+    const openFromHash = () => {
+      const hashId = window.location.hash ? window.location.hash.slice(1) : "";
+      if (!hashId) {
+        return;
+      }
+      const target = accordions.find((accordion) => accordion.id === hashId);
+      if (!target) {
+        return;
+      }
+      closeOthers(target);
+      target.open = true;
+      target.scrollIntoView({
+        block: "start",
+        behavior: reduceMotion ? "auto" : "smooth",
+      });
+    };
+
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+  };
+
+  const initWorkbenchCaseStudies = () => {
+    const toggles = Array.from(document.querySelectorAll(".workbench-case-toggle[data-case-toggle]"));
+    if (toggles.length === 0) {
+      return;
+    }
+
+    const getPanelRow = (toggle) => {
+      const panelId = toggle.getAttribute("aria-controls");
+      if (!panelId) {
+        return null;
+      }
+      return document.getElementById(panelId);
+    };
+
+    const setState = (toggle, isOpen) => {
+      const panelRow = getPanelRow(toggle);
+      const label = toggle.querySelector(".workbench-case-toggle-label");
+      const projectRow = toggle.closest(".workbench-project-row");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      if (label) {
+        label.textContent = isOpen ? "Close" : "View";
+      }
+      if (panelRow) {
+        panelRow.hidden = !isOpen;
+      }
+      if (projectRow) {
+        projectRow.classList.toggle("is-open", isOpen);
+      }
+    };
+
+    const closeOthers = (activeToggle) => {
+      toggles.forEach((toggle) => {
+        if (toggle !== activeToggle) {
+          setState(toggle, false);
+        }
+      });
+    };
+
+    toggles.forEach((toggle) => {
+      setState(toggle, false);
+      toggle.addEventListener("click", () => {
+        const shouldOpen = toggle.getAttribute("aria-expanded") !== "true";
+        if (shouldOpen) {
+          closeOthers(toggle);
+          setState(toggle, true);
+          return;
+        }
+        setState(toggle, false);
+      });
+    });
+  };
+
+  const initPricingServiceDetails = () => {
+    const toggles = Array.from(document.querySelectorAll(".pricing-detail-toggle[data-pricing-detail-toggle]"));
+    if (toggles.length === 0) {
+      return;
+    }
+
+    const getPanelRow = (toggle) => {
+      const panelId = toggle.getAttribute("aria-controls");
+      if (!panelId) {
+        return null;
+      }
+      return document.getElementById(panelId);
+    };
+
+    const setState = (toggle, isOpen) => {
+      const panelRow = getPanelRow(toggle);
+      const label = toggle.querySelector(".pricing-detail-toggle-label");
+      const serviceRow = toggle.closest(".pricing-service-row");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      if (label) {
+        label.textContent = isOpen ? "Close" : "View";
+      }
+      if (panelRow) {
+        panelRow.hidden = !isOpen;
+      }
+      if (serviceRow) {
+        serviceRow.classList.toggle("is-open", isOpen);
+      }
+    };
+
+    // Keep the interaction quiet by allowing only one expanded service at once.
+    const closeOthers = (activeToggle) => {
+      toggles.forEach((toggle) => {
+        if (toggle !== activeToggle) {
+          setState(toggle, false);
+        }
+      });
+    };
+
+    toggles.forEach((toggle) => {
+      setState(toggle, false);
+      toggle.addEventListener("click", () => {
+        const shouldOpen = toggle.getAttribute("aria-expanded") !== "true";
+        if (shouldOpen) {
+          closeOthers(toggle);
+          setState(toggle, true);
+          return;
+        }
+        setState(toggle, false);
+      });
+    });
+  };
+
   const initJournalAccordion = () => {
     const entries = Array.from(document.querySelectorAll(".journal-entry"));
     if (entries.length === 0) {
       return;
     }
 
+    const parseEntryDate = (entryId) => {
+      const match = (entryId || "").match(/^entry-(\d{4})-(\d{2})-(\d{2})$/);
+      if (!match) {
+        return Number.NEGATIVE_INFINITY;
+      }
+      const year = Number(match[1]);
+      const month = Number(match[2]) - 1;
+      const day = Number(match[3]);
+      return Date.UTC(year, month, day);
+    };
+
+    const getEntryDate = (entry) => {
+      const article = entry.querySelector(".chapter-content");
+      return parseEntryDate(article?.id || "");
+    };
+
+    const entriesHost = document.querySelector(".journal-entries-scroll") || entries[0].parentElement;
+    const orderedEntries = entries
+      .slice()
+      .sort((a, b) => getEntryDate(b) - getEntryDate(a));
+
+    if (entriesHost) {
+      orderedEntries.forEach((entry) => {
+        entriesHost.append(entry);
+      });
+    }
+
+    const jumpList = document.querySelector(".journal-index .highlight-grid[role='list']");
+    if (jumpList) {
+      const jumpItems = Array.from(jumpList.children);
+      jumpItems
+        .sort((a, b) => {
+          const aId = a.querySelector("a[href^='#entry-']")?.getAttribute("href")?.slice(1) || "";
+          const bId = b.querySelector("a[href^='#entry-']")?.getAttribute("href")?.slice(1) || "";
+          return parseEntryDate(bId) - parseEntryDate(aId);
+        })
+        .forEach((item) => {
+          jumpList.append(item);
+        });
+    }
+
     const controls = [];
-    entries.forEach((entry, index) => {
+    orderedEntries.forEach((entry, index) => {
       const layout = entry.querySelector(".chapter-layout");
       const article = entry.querySelector(".chapter-content");
       const heading = entry.querySelector("h3");
@@ -230,6 +433,10 @@
       controls.forEach((control) => {
         control.setExpanded(control === target);
       });
+      target.entry.scrollIntoView({
+        block: "nearest",
+        behavior: reduceMotion ? "auto" : "smooth",
+      });
     };
 
     openFromHash();
@@ -238,8 +445,8 @@
 
   const initPricingCurrency = () => {
     const widget = document.querySelector("[data-currency-widget]");
-    const priceCells = Array.from(document.querySelectorAll("[data-price-gbp]"));
-    if (!widget || priceCells.length === 0) {
+    const priceNodes = Array.from(document.querySelectorAll("[data-price-gbp], [data-price-gbp-min][data-price-gbp-max]"));
+    if (!widget || priceNodes.length === 0) {
       return;
     }
 
@@ -260,7 +467,15 @@
       if (mode === "monthly") {
         return "per month";
       }
-      return "one-off";
+      if (mode === "one-off") {
+        return "one-off";
+      }
+      return "";
+    };
+
+    const formatValue = (currency, gbp) => {
+      const value = currency === "EUR" ? gbp * cachedRate : gbp;
+      return formatters[currency].format(value);
     };
 
     const setButtonState = (currency) => {
@@ -282,12 +497,30 @@
         return;
       }
 
-      priceCells.forEach((cell) => {
-        const gbp = Number(cell.getAttribute("data-price-gbp"));
-        const mode = cell.getAttribute("data-price-mode") || "one-off";
+      priceNodes.forEach((node) => {
+        const mode = node.getAttribute("data-price-mode") || "";
         const suffix = modeSuffix(mode);
-        const value = currency === "EUR" ? gbp * cachedRate : gbp;
-        cell.textContent = `${formatters[currency].format(value)} ${suffix}`;
+        const minGbp = node.getAttribute("data-price-gbp-min");
+        const maxGbp = node.getAttribute("data-price-gbp-max");
+
+        if (minGbp !== null && maxGbp !== null) {
+          const minValue = Number(minGbp);
+          const maxValue = Number(maxGbp);
+          if (!Number.isFinite(minValue) || !Number.isFinite(maxValue)) {
+            return;
+          }
+          const rangeText = `${formatValue(currency, minValue)}-${formatValue(currency, maxValue)}`;
+          node.textContent = suffix ? `${rangeText} ${suffix}` : rangeText;
+          return;
+        }
+
+        const gbp = Number(node.getAttribute("data-price-gbp"));
+        if (!Number.isFinite(gbp)) {
+          return;
+        }
+
+        const amountText = formatValue(currency, gbp);
+        node.textContent = suffix ? `${amountText} ${suffix}` : amountText;
       });
     };
 
@@ -405,6 +638,9 @@
     applyCurrency(preferred);
   };
 
+  initMethodAccordions();
+  initWorkbenchCaseStudies();
+  initPricingServiceDetails();
   initJournalAccordion();
   initPricingCurrency();
 
