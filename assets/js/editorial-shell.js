@@ -644,7 +644,7 @@
   };
 
   const initResponsiveTables = () => {
-    const tables = Array.from(document.querySelectorAll(".pricing-table, .workbench-table"));
+    const tables = Array.from(document.querySelectorAll(".pricing-table:not(.pricing-services-table)"));
     if (tables.length === 0) {
       return;
     }
@@ -656,11 +656,7 @@
 
       Array.from(table.tBodies).forEach((tbody) => {
         Array.from(tbody.rows).forEach((row) => {
-          if (
-            row.classList.contains("pricing-group-row") ||
-            row.classList.contains("pricing-detail-row") ||
-            row.classList.contains("workbench-case-row")
-          ) {
+          if (row.classList.contains("pricing-group-row") || row.classList.contains("pricing-detail-row")) {
             return;
           }
 
