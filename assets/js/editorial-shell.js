@@ -643,10 +643,47 @@
     applyCurrency(preferred);
   };
 
+  const initResponsiveTables = () => {
+    const tables = Array.from(document.querySelectorAll(".pricing-table, .workbench-table"));
+    if (tables.length === 0) {
+      return;
+    }
+
+    tables.forEach((table) => {
+      const labels = Array.from(table.querySelectorAll("thead th")).map((header) =>
+        (header.textContent || "").replace(/\s+/g, " ").trim()
+      );
+
+      Array.from(table.tBodies).forEach((tbody) => {
+        Array.from(tbody.rows).forEach((row) => {
+          if (
+            row.classList.contains("pricing-group-row") ||
+            row.classList.contains("pricing-detail-row") ||
+            row.classList.contains("workbench-case-row")
+          ) {
+            return;
+          }
+
+          Array.from(row.cells).forEach((cell, index) => {
+            if (cell.matches("th[scope='row']")) {
+              return;
+            }
+
+            const label = labels[index];
+            if (label) {
+              cell.setAttribute("data-cell-label", label);
+            }
+          });
+        });
+      });
+    });
+  };
+
   initMethodAccordions();
   initWorkbenchCaseStudies();
   initPricingServiceDetails();
   initJournalAccordion();
+  initResponsiveTables();
   initPricingCurrency();
 
   window.addEventListener("scroll", scheduleFrame, { passive: true });
