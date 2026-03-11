@@ -98,47 +98,71 @@
   </figure>
 
   <main id='main'>
-    <section class='site-width page-intro' data-reveal>
+    <section class='site-width page-intro pricing-page-intro' data-reveal>
       <div class='page-intro-grid'>
         <div>
           <p class='kicker'>What does this cost?</p>
           <h1 class='page-title'>Services & Pricing</h1>
         </div>
         <div>
-          <p>Clear services. Clear pricing. No mystery. The main service options are shown in one comparison table, with deeper detail available on demand.</p>
-          <p>Most organisations can implement many of these methods independently, and this website explains how. Waylight Atlantic also provides practical delivery and stewardship support where capacity is limited. Demonstration builds are available on the <a href='workbench.html'><strong>Workbench</strong></a>.</p>
-          <p>Use the Detail column to open service notes on scope, process, and quoting.</p>
+          <p>Waylight services are grouped by work type below. Prices are shown as guide prices or starting points where relevant, Waylight can support many other services so please use the Contact page if you have any questions.</p>
         </div>
       </div>
     </section>
 
-    <section class='site-width pricing-layout' data-reveal>
-      <p class='kicker'>Services and pricing approach</p>
-      <h3>Structured service comparison</h3>
-      <p>The table is designed for quick comparison first, with fuller explanation available only when you need it. Services are grouped by work type to reduce scanning effort.</p>
-      <div class='pricing-currency' data-currency-widget>
-        <p class='pricing-currency-label'>Region pricing</p>
-        <div class='pricing-currency-buttons' role='group' aria-label='Pricing region selector'>
-          <button type='button' class='currency-btn is-active' data-currency-choice='GBP' aria-pressed='true'>UK (GBP)</button>
-          <button type='button' class='currency-btn' data-currency-choice='EUR' aria-pressed='false'>Ireland (EUR)</button>
-        </div>
-        <p class='pricing-currency-note' data-currency-note>UK prices shown in GBP.</p>
+    <section class='site-width pricing-section pricing-how-it-works' data-reveal aria-labelledby='pricing-how-it-works-title'>
+      <div class='pricing-section-header'>
+        <p class='kicker'>How pricing works</p>
+        <h2 id='pricing-how-it-works-title'>Clear structure before detail</h2>
       </div>
-      <div class='pricing-table-wrap'>
-        <table class='pricing-table pricing-services-table' aria-label='Waylight Atlantic services and pricing table'>
+      <div class='pricing-process-grid'>
+        <div class='pricing-principles' role='list'>
+          <article class='pricing-principle' role='listitem'>
+            <strong>Groups Services</strong>
+            <p>Website work is listed separately from digital organisation, administration, and governance support. This keeps pricing simple and easier to scan although Waylight can offer these as a package.</p>
+          </article>
+          <article class='pricing-principle' role='listitem'>
+            <strong>Fixed packages or quoted work</strong>
+            <p>Some services have clear fixed packages, while broader work is quoted based on scope. This keeps pricing fair and avoids unnecessary costs. Waylight is here to support small and independent business keep costs down.</p>
+          </article>
+          <article class='pricing-principle' role='listitem'>
+            <strong>Support options available</strong>
+            <p>Ongoing support packages are available for organisations that want help keeping their website or digital systems updated over time. Alternative we have packages where we provide the website and you manage the content.</p>
+          </article>
+          <article class='pricing-principle' role='listitem'>
+            <strong>More detail if needed</strong>
+            <p>Start with the comparison table below. If you want more detail, you can open the service notes for scope, process, and typical delivery. Alternatively, use the Waylight contact form and someone will be in touch to discuss your requirements.</p>
+          </article>
+        </div>
+        <div class='pricing-currency' data-currency-widget>
+          <p class='pricing-currency-label'>Region pricing</p>
+          <div class='pricing-currency-buttons' role='group' aria-label='Pricing region selector'>
+            <button type='button' class='currency-btn is-active' data-currency-choice='GBP' aria-pressed='true'>UK (GBP)</button>
+            <button type='button' class='currency-btn' data-currency-choice='EUR' aria-pressed='false'>Ireland (EUR)</button>
+          </div>
+          <p class='pricing-currency-note' data-currency-note>UK prices shown in GBP.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class='site-width pricing-section pricing-services-section' data-reveal aria-labelledby='pricing-website-work-title'>
+      <div class='pricing-section-header'>
+        <p class='kicker'>Website Builds & Maintenance</p>
+        <h2 id='pricing-website-work-title'>Website Work</h2>
+        <p>Starter routes, improvement work, and ongoing support for small organisations that need a calm, maintainable web presence.</p>
+      </div>
+      <div class='pricing-table-wrap pricing-table-wrap--calm'>
+        <table class='pricing-table pricing-offer-table' aria-label='Waylight Atlantic website work pricing'>
           <thead>
             <tr>
               <th scope='col'>Service</th>
               <th scope='col'>Type</th>
               <th scope='col'>Typical Cost</th>
-              <th scope='col'>Who is this for?</th>
+              <th scope='col'>Best For</th>
               <th scope='col'>Detail</th>
             </tr>
           </thead>
           <tbody>
-            <tr class='pricing-group-row'>
-              <th scope='rowgroup' colspan='5'>Website Work</th>
-            </tr>
             <tr class='pricing-service-row'>
               <th scope='row'>Starter Website</th>
               <td>Entry / Template</td>
@@ -171,12 +195,8 @@
                       <dd>Scope check or template selection via the <a href='templates.html'>Templates page</a>, content collection, static build or setup pass, review, then handover with clear update guidance.</dd>
                     </div>
                     <div class='pricing-detail-item'>
-                      <dt>Notes on cost / support / quoting</dt>
+                      <dt>Notes on cost / quoting</dt>
                       <dd>The starter route is free within scope, whether delivered as a simple build or selected starter template. Ongoing annual support is handled through <a href='#service-care-control-row'>Care &amp; Control (Package)</a>, listed below as a stand-alone option. Work beyond scope is quoted separately.</dd>
-                    </div>
-                    <div class='pricing-detail-item'>
-                      <dt>Optional examples or use cases</dt>
-                      <dd>Starter brochure-style website for a local service, ministry, or small community organisation, including low-friction launch cases where a predefined starter template is preferred.</dd>
                     </div>
                   </dl>
                 </div>
@@ -214,12 +234,8 @@
                       <dd>Initial review, issue list, scoped improvement plan, staged implementation, and structured handback notes.</dd>
                     </div>
                     <div class='pricing-detail-item'>
-                      <dt>Notes on cost / support / quoting</dt>
+                      <dt>Notes on cost / quoting</dt>
                       <dd>Starts from <span data-price-gbp='250'>&pound;250</span> for smaller works. Wider structural changes and feature additions are quoted against a tailored scope.</dd>
-                    </div>
-                    <div class='pricing-detail-item'>
-                      <dt>Optional examples or use cases</dt>
-                      <dd>Restructuring a cluttered site menu, improving page hierarchy, or adding missing service and contact pathways.</dd>
                     </div>
                   </dl>
                 </div>
@@ -257,12 +273,8 @@
                       <dd>Scope confirmation, content loading, build pass, review, and handover of a simple static setup.</dd>
                     </div>
                     <div class='pricing-detail-item'>
-                      <dt>Notes on cost / support / quoting</dt>
+                      <dt>Notes on cost / quoting</dt>
                       <dd>One-off base package pricing. Additional features or pages beyond package scope are quoted separately.</dd>
-                    </div>
-                    <div class='pricing-detail-item'>
-                      <dt>Optional examples or use cases</dt>
-                      <dd>First public website for a local service, club, or small community organisation.</dd>
                     </div>
                   </dl>
                 </div>
@@ -300,12 +312,8 @@
                       <dd>Short discovery, structure map, staged implementation, review cycle, and handover guidance.</dd>
                     </div>
                     <div class='pricing-detail-item'>
-                      <dt>Notes on cost / support / quoting</dt>
+                      <dt>Notes on cost / quoting</dt>
                       <dd>One-off package cost for defined scope. Enhancements beyond package boundaries are quoted.</dd>
-                    </div>
-                    <div class='pricing-detail-item'>
-                      <dt>Optional examples or use cases</dt>
-                      <dd>Growing organisation needing clearer service pages, improved user pathways, and stronger information architecture.</dd>
                     </div>
                   </dl>
                 </div>
@@ -343,20 +351,36 @@
                       <dd>Agree monthly priorities, complete support tasks, then confirm outcomes and next-cycle actions.</dd>
                     </div>
                     <div class='pricing-detail-item'>
-                      <dt>Notes on cost / support / quoting</dt>
+                      <dt>Notes on cost / quoting</dt>
                       <dd>Monthly guide range varies by complexity and support load; final support scope is agreed and confirmed in writing.</dd>
-                    </div>
-                    <div class='pricing-detail-item'>
-                      <dt>Optional examples or use cases</dt>
-                      <dd>Routine content maintenance, recurring checks, and planned updates for teams without in-house web capacity.</dd>
                     </div>
                   </dl>
                 </div>
               </td>
             </tr>
-            <tr class='pricing-group-row'>
-              <th scope='rowgroup' colspan='5'>Digital Organisation and Administration Work</th>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class='site-width pricing-section pricing-services-section' data-reveal aria-labelledby='pricing-organisation-title'>
+      <div class='pricing-section-header'>
+        <p class='kicker'>Digital Hygiene organisation &amp; administration</p>
+        <h2 id='pricing-organisation-title'>Digital Organisation &amp; Administration</h2>
+        <p>Practical support for information order, shared systems, and operational workload that needs a steadier hand. Good digital organisation is also the foundation for using modern tools &mdash; including AI &mdash; safely and productively.</p>
+      </div>
+      <div class='pricing-table-wrap pricing-table-wrap--calm'>
+        <table class='pricing-table pricing-offer-table' aria-label='Waylight Atlantic digital organisation and administration pricing'>
+          <thead>
+            <tr>
+              <th scope='col'>Service</th>
+              <th scope='col'>Type</th>
+              <th scope='col'>Typical Cost</th>
+              <th scope='col'>Best For</th>
+              <th scope='col'>Detail</th>
             </tr>
+          </thead>
+          <tbody>
             <tr class='pricing-service-row'>
               <th scope='row'>Digital Stewardship</th>
               <td>Ongoing</td>
@@ -389,12 +413,8 @@
                       <dd>Confirm support pattern, agree priority tasks, deliver in practical sessions, and maintain a simple running change log.</dd>
                     </div>
                     <div class='pricing-detail-item'>
-                      <dt>Notes on cost / support / quoting</dt>
+                      <dt>Notes on cost / quoting</dt>
                       <dd>Available as one-off, half-day, full-day, or monthly support. Pricing is quoted against expected support load and cadence.</dd>
-                    </div>
-                    <div class='pricing-detail-item'>
-                      <dt>Optional examples or use cases</dt>
-                      <dd>Monthly website and document upkeep, periodic spreadsheet tidy work, and structured digital admin support after project delivery.</dd>
                     </div>
                   </dl>
                 </div>
@@ -425,19 +445,15 @@
                     </div>
                     <div class='pricing-detail-item'>
                       <dt>What is included</dt>
-                      <dd>Folder review, structure simplification, naming standards, duplication reduction, and practical structure notes.</dd>
+                      <dd>Folder review, structure simplification, naming standards, duplication reduction, and practical structure notes. Preparing systems so modern tools (including AI assistants) can work reliably with your information.</dd>
                     </div>
                     <div class='pricing-detail-item'>
                       <dt>Typical process</dt>
                       <dd>Assessment plan, structure proposal, tidy implementation, and handover guidance to keep systems maintainable.</dd>
                     </div>
                     <div class='pricing-detail-item'>
-                      <dt>Notes on cost / support / quoting</dt>
+                      <dt>Notes on cost / quoting</dt>
                       <dd>Delivered on quoted scope after initial review due to variation in system size and complexity.</dd>
-                    </div>
-                    <div class='pricing-detail-item'>
-                      <dt>Optional examples or use cases</dt>
-                      <dd>Shared drive reset project for a small team with legacy folders and unclear file ownership.</dd>
                     </div>
                   </dl>
                 </div>
@@ -475,20 +491,36 @@
                       <dd>Prioritise workload, agree support window, complete tasks in planned batches, then report progress clearly.</dd>
                     </div>
                     <div class='pricing-detail-item'>
-                      <dt>Notes on cost / support / quoting</dt>
+                      <dt>Notes on cost / quoting</dt>
                       <dd>Quoted to scope and support cadence; one-off or ongoing arrangements can be agreed.</dd>
-                    </div>
-                    <div class='pricing-detail-item'>
-                      <dt>Optional examples or use cases</dt>
-                      <dd>Monthly operational help combining website edits, document cleanup, and shared-system housekeeping.</dd>
                     </div>
                   </dl>
                 </div>
               </td>
             </tr>
-            <tr class='pricing-group-row'>
-              <th scope='rowgroup' colspan='5'>Digital Governance Work</th>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class='site-width pricing-section pricing-services-section' data-reveal aria-labelledby='pricing-governance-title'>
+      <div class='pricing-section-header'>
+        <p class='kicker'>Digital governance</p>
+        <h2 id='pricing-governance-title'>Digital Governance</h2>
+        <p>A focused governance baseline for small organisations that need clearer control of shared files, documents, and practical process records. Good governance also ensures new tools such as AI interact with business information safely and predictably.</p>
+      </div>
+      <div class='pricing-table-wrap pricing-table-wrap--calm pricing-table-wrap--compact'>
+        <table class='pricing-table pricing-offer-table pricing-offer-table--compact' aria-label='Waylight Atlantic digital governance pricing'>
+          <thead>
+            <tr>
+              <th scope='col'>Service</th>
+              <th scope='col'>Type</th>
+              <th scope='col'>Typical Cost</th>
+              <th scope='col'>Best For</th>
+              <th scope='col'>Detail</th>
             </tr>
+          </thead>
+          <tbody>
             <tr class='pricing-service-row'>
               <th scope='row'>Digital Governance Setup</th>
               <td>Project</td>
@@ -530,12 +562,8 @@
                       <dd>Review current setup, define a simple governance model, implement core structure, and hand over with practical usage guidance.</dd>
                     </div>
                     <div class='pricing-detail-item'>
-                      <dt>Notes on cost / support / quoting</dt>
+                      <dt>Notes on cost / quoting</dt>
                       <dd>Starts from <span data-price-gbp='300'>&pound;300</span> for a focused baseline setup; final scope is confirmed based on system size and complexity.</dd>
-                    </div>
-                    <div class='pricing-detail-item'>
-                      <dt>Optional examples or use cases</dt>
-                      <dd>First-pass governance setup for a team moving from ad hoc file handling to consistent shared standards.</dd>
                     </div>
                   </dl>
                 </div>
@@ -544,73 +572,39 @@
           </tbody>
         </table>
       </div>
-      <section class='pricing-faq' aria-labelledby='pricing-faq-title'>
-        <h4 id='pricing-faq-title'>Pricing FAQ</h4>
-        <div class='pricing-table-wrap'>
-          <table class='pricing-table pricing-faq-table' aria-label='Waylight Atlantic pricing FAQ'>
-            <thead>
-              <tr>
-                <th scope='col'>Question</th>
-                <th scope='col'>Answer</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope='row'>Can the current domain and email setup be kept?</th>
-                <td>In most cases, yes. Waylight Atlantic normally works with your existing domain and mail provider where practical.</td>
-              </tr>
-              <tr>
-                <th scope='row'>Do you add analytics and cookies by default?</th>
-                <td>No. Analytics and cookie tooling are added only where needed for your goals and compliance context.</td>
-              </tr>
-              <tr>
-                <th scope='row'>How quickly will a reply be received?</th>
-                <td>Initial reply is typically within 1 business day.</td>
-              </tr>
-              <tr>
-                <th scope='row'>What if the right service is not clear?</th>
-                <td>Request a short call and Waylight Atlantic will recommend the simplest workable option.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-      <p class='pricing-note'><strong>Getting started: </strong>To begin a review of your requirements, Waylight Atlantic needs your service needs in plain language, any existing branding, contact details and preferred call-to-action, and any required compliance text.</p>
-      <p class='pricing-note'><strong>Response expectation: </strong>Initial reply within 1 business day. The priority is always simple, maintainable systems rather than fragile setups.</p>
-      <p class='pricing-note'><strong>Need something not listed?</strong> If your requirement is not shown in this table, use the <a href='contact.html'>contact form</a> and a tailored scope can be prepared.</p>
-      <p class='pricing-cta'><a href='contact.html' class='pricing-cta-link'>Request a quotation</a></p>
     </section>
 
-    <section class='home-quicklinks' data-reveal aria-label='Quick links'>
-      <div class='site-width'>
-        <nav class='home-quicklinks-nav'>
-          <a href='index.html'>Home</a>
-          <span aria-hidden='true'>/</span>
-          <a href='pricing.html'>Services &amp; Pricing</a>
-          <span aria-hidden='true'>/</span>
-          <a href='workbench.html'>Workbench</a>
-          <span aria-hidden='true'>/</span>
-          <a href='digital-hygiene.html'>Digital Hygiene</a>
-          <span aria-hidden='true'>/</span>
-          <a href='practical-tips.html'>Practical Hints &amp; Tips</a>
-          <span aria-hidden='true'>/</span>
-          <a href='about.html'>About</a>
-          <span aria-hidden='true'>/</span>
-          <a href='contact.html'>Contact</a>
-        </nav>
+    <section class='site-width pricing-section pricing-faq-section' data-reveal aria-labelledby='pricing-faq-title'>
+      <div class='pricing-section-header'>
+        <p class='kicker'>Pricing FAQ</p>
+        <h2 id='pricing-faq-title'>Pricing FAQ</h2>
+      </div>
+      <div class='pricing-faq-list'>
+        <article class='pricing-faq-item'>
+          <h3>Can the current domain and email setup be kept?</h3>
+          <p>In most cases, yes. Waylight Atlantic normally works with your existing domain and mail provider where practical.</p>
+        </article>
+        <article class='pricing-faq-item'>
+          <h3>Do you add analytics and cookies by default?</h3>
+          <p>No. Analytics and cookie tooling are added only where needed for your goals and compliance context.</p>
+        </article>
+        <article class='pricing-faq-item'>
+          <h3>How quickly will a reply be received?</h3>
+          <p>Initial reply is typically within 1 business day.</p>
+        </article>
+        <article class='pricing-faq-item'>
+          <h3>What if the right service is not clear?</h3>
+          <p>Request a short call and Waylight Atlantic will recommend the simplest workable option.</p>
+        </article>
       </div>
     </section>
 
-    <figure class='hero-band hero-band--full hero-band--stripes home-stripes-break' aria-hidden='true'></figure>
-
-    <section class='site-width highlights' data-reveal>
-      <p class='kicker'>Page Summary</p>
-      <h3>Services &amp; Pricing</h3>
-      <div class='highlight-grid' role='list'>
-        <blockquote class='highlight' role='listitem'><strong>Grouped by work type</strong><br />Website work is separated from digital organisation and administration support for easier scanning.</blockquote>
-        <blockquote class='highlight' role='listitem'><strong>Tailored vs template routes</strong><br />Starter Website now covers both the entry build route and the predefined template route via the Templates page, alongside Tailored Basic and Tailored Standard packages.</blockquote>
-        <blockquote class='highlight' role='listitem'><strong>Support linkage</strong><br />Starter Website routes can move into Care &amp; Control (Package) as the ongoing support path.</blockquote>
-        <blockquote class='highlight' role='listitem'><strong>Table first, detail on demand</strong><br />The page remains comparison-first, with expandable row detail where deeper context is needed.</blockquote>
+    <section class='site-width pricing-section pricing-cta-section' data-reveal aria-labelledby='pricing-next-step-title'>
+      <div class='pricing-cta-card'>
+        <p class='kicker'>Next step</p>
+        <h2 id='pricing-next-step-title'>Request a quotation</h2>
+        <p>Send a short outline of what you need and Waylight Atlantic will recommend the simplest workable route before any broader quotation is prepared.</p>
+        <p class='pricing-cta'><a href='contact.html' class='pricing-cta-link'>Request a quotation</a></p>
       </div>
     </section>
   </main>
@@ -634,8 +628,6 @@
   </footer>
 </body>
 </html>
-
-
 
 
 
