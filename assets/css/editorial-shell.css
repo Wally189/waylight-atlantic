@@ -58,7 +58,7 @@ a:focus-visible {
   }
 }
 
-main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.pricing-detail-toggle):not(.footer-btn) {
+main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.home-contact-button):not(.section-link):not(.pricing-cta-link):not(.pricing-detail-toggle):not(.footer-btn) {
   color: var(--primary-navy);
   font-weight: 700;
   text-decoration-line: underline;
@@ -78,8 +78,8 @@ main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link)
   transition: color 170ms ease, text-decoration-color 170ms ease, background-size 220ms ease, text-shadow 170ms ease;
 }
 
-main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.pricing-detail-toggle):not(.footer-btn):hover,
-main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.pricing-detail-toggle):not(.footer-btn):focus-visible {
+main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.home-contact-button):not(.section-link):not(.pricing-cta-link):not(.pricing-detail-toggle):not(.footer-btn):hover,
+main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.home-contact-button):not(.section-link):not(.pricing-cta-link):not(.pricing-detail-toggle):not(.footer-btn):focus-visible {
   color: var(--accent);
   text-decoration-color: var(--accent);
   text-shadow: 0 0 0.52rem color-mix(in srgb, var(--accent-sunlight) 38%, transparent);
@@ -395,6 +395,35 @@ h4 {
   background-size: 0% 100%;
   background-position: 115% 0;
   transition: color 170ms ease, text-decoration-color 170ms ease, background-size 220ms ease, text-shadow 170ms ease;
+}
+
+.home-contact-action {
+  margin-top: var(--space-3);
+}
+
+.home-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  max-width: min(100%, 28rem);
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: var(--accent);
+  color: var(--paper);
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 170ms ease, color 170ms ease, border-color 170ms ease;
+}
+
+.home-contact-button:hover,
+.home-contact-button:focus-visible {
+  color: var(--paper);
+  background: var(--primary-navy);
+  border-color: var(--primary-navy);
 }
 
 .about-gdpr-note a {
@@ -1419,6 +1448,8 @@ h4 {
 
 .home-contact-link:hover,
 .home-contact-link:focus-visible,
+.home-contact-button:hover,
+.home-contact-button:focus-visible,
 .section-link:hover,
 .section-link:focus-visible,
 .gateway-link:hover,
@@ -2551,12 +2582,13 @@ a[aria-disabled="true"] {
     scroll-behavior: auto;
   }
 
-  main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.section-link):not(.pricing-cta-link):not(.pricing-detail-toggle):not(.footer-btn) {
+  main :is(p, li, td, th, blockquote) a:not(.home-contact-link):not(.home-contact-button):not(.section-link):not(.pricing-cta-link):not(.pricing-detail-toggle):not(.footer-btn) {
     transition: none;
     animation: none;
   }
 
   .home-contact-link,
+  .home-contact-button,
   .section-link,
   .gateway-link,
   .chapter-next a {
