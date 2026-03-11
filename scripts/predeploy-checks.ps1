@@ -79,6 +79,7 @@ $redirectPages = @(
 )
 
 $shellPages = @(
+  "AIforSmallbusiness.html",
   "404.html",
   "about.html",
   "contact.html",
