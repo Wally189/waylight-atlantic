@@ -2344,6 +2344,74 @@ a[aria-disabled="true"] {
     grid-template-columns: 1fr;
   }
 
+  .pricing-offer-table {
+    min-width: 0;
+    display: block;
+    font-size: 0.92rem;
+  }
+
+  .pricing-offer-table thead {
+    display: none;
+  }
+
+  .pricing-offer-table tbody {
+    display: block;
+  }
+
+  .pricing-offer-table tr {
+    display: block;
+  }
+
+  .pricing-offer-table tbody tr:not(.pricing-detail-row) {
+    margin-top: 1rem;
+    border: 1px solid var(--line);
+    background: var(--paper);
+  }
+
+  .pricing-offer-table tbody tr:not(.pricing-detail-row) > th[scope="row"] {
+    display: block;
+    padding: 0.95rem 1rem;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    background: color-mix(in srgb, var(--secondary-sky) 18%, var(--paper));
+    font-size: 1rem;
+  }
+
+  .pricing-offer-table tbody tr:not(.pricing-detail-row) > td {
+    display: grid;
+    grid-template-columns: minmax(86px, 32%) minmax(0, 1fr);
+    gap: 0.35rem 0.72rem;
+    align-items: start;
+    width: 100%;
+    padding: 0.8rem 0.95rem;
+    border-bottom: 1px solid var(--line);
+    white-space: normal;
+  }
+
+  .pricing-offer-table tbody tr:not(.pricing-detail-row) > td::before {
+    content: attr(data-cell-label);
+    color: var(--ink);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.45;
+  }
+
+  .pricing-offer-table .pricing-detail-col {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .pricing-offer-table .pricing-detail-col .pricing-detail-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pricing-offer-table .pricing-detail-row td {
+    padding: 0.95rem 0.9rem 1rem;
+  }
+
   .feature-article__copy {
     column-count: 1;
     column-rule: 0;

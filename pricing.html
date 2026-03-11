@@ -25,7 +25,7 @@
   <link rel='preconnect' href='https://fonts.googleapis.com' />
   <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
   <link href='https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600&display=swap' rel='stylesheet' />
-  <link rel='stylesheet' href='assets/css/editorial-shell.css?v=20260304-1745' />
+  <link rel='stylesheet' href='assets/css/editorial-shell.css?v=20260311-1600' />
   <script defer src='assets/js/editorial-shell.js?v=20260304-1745'></script>
   <!-- SEO SCHEMA START -->
   <script type='application/ld+json'>
@@ -165,10 +165,10 @@
           <tbody>
             <tr class='pricing-service-row'>
               <th scope='row'>Starter Website</th>
-              <td>Entry / Template</td>
-              <td>Free build or starter template + <a href='#service-care-control-row'>Care &amp; Control (Package)</a></td>
-              <td>Sole traders, parishes, charities, and small organisations needing a simple web presence with either a tailored starter build or a predefined template route.</td>
-              <td class='pricing-detail-col'>
+              <td data-cell-label='Type'>Entry / Template</td>
+              <td data-cell-label='Typical cost'>Free build or starter template + <a href='#service-care-control-row'>Care &amp; Control (Package)</a></td>
+              <td data-cell-label='Best for'>Sole traders, parishes, charities, and small organisations needing a simple web presence with either a tailored starter build or a predefined template route.</td>
+              <td class='pricing-detail-col' data-cell-label='Detail'>
                 <button type='button' class='pricing-detail-toggle' data-pricing-detail-toggle aria-expanded='false' aria-controls='service-detail-starter-website'>
                   <span class='pricing-detail-toggle-label'>View</span>
                 </button>
@@ -204,10 +204,10 @@
             </tr>
             <tr class='pricing-service-row'>
               <th scope='row'>Website Improvement</th>
-              <td>Project</td>
-              <td>From <span data-price-gbp='250'>&pound;250</span> or quoted</td>
-              <td>Organisations with an existing website needing refinement, restructuring, or additional features.</td>
-              <td class='pricing-detail-col'>
+              <td data-cell-label='Type'>Project</td>
+              <td data-cell-label='Typical cost'>From <span data-price-gbp='250'>&pound;250</span> or quoted</td>
+              <td data-cell-label='Best for'>Organisations with an existing website needing refinement, restructuring, or additional features.</td>
+              <td class='pricing-detail-col' data-cell-label='Detail'>
                 <button type='button' class='pricing-detail-toggle' data-pricing-detail-toggle aria-expanded='false' aria-controls='service-detail-website-improvement'>
                   <span class='pricing-detail-toggle-label'>View</span>
                 </button>
@@ -243,10 +243,10 @@
             </tr>
             <tr class='pricing-service-row'>
               <th scope='row'>Tailored Basic (Package)</th>
-              <td>Package</td>
-              <td data-price-gbp='350' data-price-mode='one-off'>&pound;350 one-off</td>
-              <td>Organisations needing an initial tailored website package with fixed scope and quick delivery.</td>
-              <td class='pricing-detail-col'>
+              <td data-cell-label='Type'>Package</td>
+              <td data-cell-label='Typical cost' data-price-gbp='350' data-price-mode='one-off'>&pound;350 one-off</td>
+              <td data-cell-label='Best for'>Organisations needing an initial tailored website package with fixed scope and quick delivery.</td>
+              <td class='pricing-detail-col' data-cell-label='Detail'>
                 <button type='button' class='pricing-detail-toggle' data-pricing-detail-toggle aria-expanded='false' aria-controls='service-detail-starter-package'>
                   <span class='pricing-detail-toggle-label'>View</span>
                 </button>
@@ -282,10 +282,10 @@
             </tr>
             <tr class='pricing-service-row'>
               <th scope='row'>Tailored Standard (Package)</th>
-              <td>Package</td>
-              <td data-price-gbp='750' data-price-mode='one-off'>&pound;750 one-off</td>
-              <td>Organisations needing a broader tailored website package with stronger navigation and structure.</td>
-              <td class='pricing-detail-col'>
+              <td data-cell-label='Type'>Package</td>
+              <td data-cell-label='Typical cost' data-price-gbp='750' data-price-mode='one-off'>&pound;750 one-off</td>
+              <td data-cell-label='Best for'>Organisations needing a broader tailored website package with stronger navigation and structure.</td>
+              <td class='pricing-detail-col' data-cell-label='Detail'>
                 <button type='button' class='pricing-detail-toggle' data-pricing-detail-toggle aria-expanded='false' aria-controls='service-detail-standard-package'>
                   <span class='pricing-detail-toggle-label'>View</span>
                 </button>
@@ -321,10 +321,10 @@
             </tr>
             <tr class='pricing-service-row' id='service-care-control-row'>
               <th scope='row'>Care &amp; Control (Package)</th>
-              <td>Ongoing</td>
-              <td><span data-price-gbp-min='20' data-price-gbp-max='40' data-price-mode='monthly'>&pound;20-&pound;40 per month</span></td>
-              <td>Clients needing ongoing monthly support after launch.</td>
-              <td class='pricing-detail-col'>
+              <td data-cell-label='Type'>Ongoing</td>
+              <td data-cell-label='Typical cost'><span data-price-gbp-min='20' data-price-gbp-max='40' data-price-mode='monthly'>&pound;20-&pound;40 per month</span></td>
+              <td data-cell-label='Best for'>Clients needing ongoing monthly support after launch.</td>
+              <td class='pricing-detail-col' data-cell-label='Detail'>
                 <button type='button' class='pricing-detail-toggle' data-pricing-detail-toggle aria-expanded='false' aria-controls='service-detail-care-control'>
                   <span class='pricing-detail-toggle-label'>View</span>
                 </button>
@@ -383,10 +383,10 @@
           <tbody>
             <tr class='pricing-service-row'>
               <th scope='row'>Digital Stewardship</th>
-              <td>Ongoing</td>
-              <td>By quote / guide pricing</td>
-              <td>Small organisations needing practical digital or administrative support over time.</td>
-              <td class='pricing-detail-col'>
+              <td data-cell-label='Type'>Ongoing</td>
+              <td data-cell-label='Typical cost'>By quote / guide pricing</td>
+              <td data-cell-label='Best for'>Small organisations needing practical digital or administrative support over time.</td>
+              <td class='pricing-detail-col' data-cell-label='Detail'>
                 <button type='button' class='pricing-detail-toggle' data-pricing-detail-toggle aria-expanded='false' aria-controls='service-detail-digital-stewardship'>
                   <span class='pricing-detail-toggle-label'>View</span>
                 </button>
@@ -422,10 +422,10 @@
             </tr>
             <tr class='pricing-service-row'>
               <th scope='row'>Digital Hygiene Review</th>
-              <td>Project</td>
-              <td>Quotation on request</td>
-              <td>Teams needing a practical tidy-up of shared drives, file structures, and information organisation.</td>
-              <td class='pricing-detail-col'>
+              <td data-cell-label='Type'>Project</td>
+              <td data-cell-label='Typical cost'>Quotation on request</td>
+              <td data-cell-label='Best for'>Teams needing a practical tidy-up of shared drives, file structures, and information organisation.</td>
+              <td class='pricing-detail-col' data-cell-label='Detail'>
                 <button type='button' class='pricing-detail-toggle' data-pricing-detail-toggle aria-expanded='false' aria-controls='service-detail-digital-hygiene-review'>
                   <span class='pricing-detail-toggle-label'>View</span>
                 </button>
@@ -461,10 +461,10 @@
             </tr>
             <tr class='pricing-service-row'>
               <th scope='row'>Freelance Administrative Support</th>
-              <td>Support</td>
-              <td>Quotation on request</td>
-              <td>Organisations lacking internal capacity for practical operational and digital admin work.</td>
-              <td class='pricing-detail-col'>
+              <td data-cell-label='Type'>Support</td>
+              <td data-cell-label='Typical cost'>Quotation on request</td>
+              <td data-cell-label='Best for'>Organisations lacking internal capacity for practical operational and digital admin work.</td>
+              <td class='pricing-detail-col' data-cell-label='Detail'>
                 <button type='button' class='pricing-detail-toggle' data-pricing-detail-toggle aria-expanded='false' aria-controls='service-detail-admin-support'>
                   <span class='pricing-detail-toggle-label'>View</span>
                 </button>
@@ -523,10 +523,10 @@
           <tbody>
             <tr class='pricing-service-row'>
               <th scope='row'>Digital Governance Setup</th>
-              <td>Project</td>
-              <td>From <span data-price-gbp='300'>&pound;300</span></td>
-              <td>Organisations needing structure for managing digital information and processes.</td>
-              <td class='pricing-detail-col'>
+              <td data-cell-label='Type'>Project</td>
+              <td data-cell-label='Typical cost'>From <span data-price-gbp='300'>&pound;300</span></td>
+              <td data-cell-label='Best for'>Organisations needing structure for managing digital information and processes.</td>
+              <td class='pricing-detail-col' data-cell-label='Detail'>
                 <button type='button' class='pricing-detail-toggle' data-pricing-detail-toggle aria-expanded='false' aria-controls='service-detail-digital-governance-setup'>
                   <span class='pricing-detail-toggle-label'>View</span>
                 </button>
@@ -628,10 +628,3 @@
   </footer>
 </body>
 </html>
-
-
-
-
-
-
-
