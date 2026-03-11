@@ -2155,6 +2155,10 @@ h4 {
   background: color-mix(in srgb, var(--secondary-sky) 10%, var(--paper));
 }
 
+.articles-bulletin--plain {
+  margin-top: var(--space-3);
+}
+
 .articles-bulletin-list {
   list-style: none;
   margin: var(--space-2) 0 0;
@@ -2173,6 +2177,10 @@ h4 {
   display: block;
   margin-bottom: 0.22rem;
   color: var(--ink);
+}
+
+.articles-bulletin--plain .articles-bulletin-list {
+  margin-top: 0;
 }
 
 .articles-index-scroll {
