@@ -270,6 +270,55 @@
     });
   };
 
+  const initWorkbenchViewport = () => {
+    const wrap = document.querySelector(".workbench-table-wrap[data-workbench-window]");
+    const table = wrap ? wrap.querySelector(".workbench-table") : null;
+    const header = table ? table.querySelector("thead") : null;
+    if (!wrap || !table || !header) {
+      return;
+    }
+
+    const visibleCount = Number(wrap.getAttribute("data-workbench-window")) || 4;
+    const projectRows = Array.from(table.querySelectorAll(".workbench-project-row"));
+    if (projectRows.length <= visibleCount) {
+      return;
+    }
+
+    const visibleRows = projectRows.slice(0, visibleCount);
+
+    const updateScrollState = () => {
+      const overflow = wrap.scrollHeight - wrap.clientHeight > 6;
+      const atEnd = wrap.scrollTop + wrap.clientHeight >= wrap.scrollHeight - 6;
+      wrap.classList.toggle("is-scrollable", overflow);
+      wrap.classList.toggle("is-overflowing", overflow);
+      wrap.classList.toggle("is-at-end", !overflow || atEnd);
+    };
+
+    const updateViewport = () => {
+      const headerHeight = Math.ceil(header.getBoundingClientRect().height);
+      const rowsHeight = visibleRows.reduce((total, row) => total + Math.ceil(row.getBoundingClientRect().height), 0);
+      const horizontalScrollbarAllowance = wrap.scrollWidth > wrap.clientWidth + 6 ? 18 : 0;
+      wrap.style.maxHeight = `${headerHeight + rowsHeight + horizontalScrollbarAllowance + 2}px`;
+      updateScrollState();
+    };
+
+    const queueUpdate = () => {
+      window.requestAnimationFrame(updateViewport);
+    };
+
+    wrap.addEventListener("scroll", updateScrollState, { passive: true });
+    window.addEventListener("resize", queueUpdate);
+
+    if (typeof ResizeObserver === "function") {
+      const observer = new ResizeObserver(queueUpdate);
+      observer.observe(table);
+      observer.observe(header);
+      visibleRows.forEach((row) => observer.observe(row));
+    }
+
+    queueUpdate();
+  };
+
   const initPricingServiceDetails = () => {
     const toggles = Array.from(document.querySelectorAll(".pricing-detail-toggle[data-pricing-detail-toggle]"));
     if (toggles.length === 0) {
@@ -677,6 +726,7 @@
 
   initMethodAccordions();
   initWorkbenchCaseStudies();
+  initWorkbenchViewport();
   initPricingServiceDetails();
   initJournalAccordion();
   initResponsiveTables();
