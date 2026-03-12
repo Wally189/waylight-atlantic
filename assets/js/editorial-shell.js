@@ -270,6 +270,62 @@
     });
   };
 
+  const initWorkbenchOrdering = () => {
+    const table = document.querySelector(".workbench-table");
+    const body = table ? table.tBodies[0] : null;
+    if (!table || !body) {
+      return;
+    }
+
+    const seasonOrder = {
+      spring: 1,
+      summer: 2,
+      autumn: 3,
+      fall: 3,
+      winter: 4,
+    };
+
+    const getTargetScore = (row) => {
+      const targetText = (row.cells[5]?.textContent || "").replace(/\s+/g, " ").trim().toLowerCase();
+      const seasonMatch = targetText.match(/\b(spring|summer|autumn|fall|winter)\s+(\d{4})\b/);
+      if (seasonMatch) {
+        const [, season, year] = seasonMatch;
+        return Number(year) * 10 + seasonOrder[season];
+      }
+
+      const yearMatch = targetText.match(/\b(\d{4})\b/);
+      if (yearMatch) {
+        return Number(yearMatch[1]) * 10;
+      }
+
+      return Number.NEGATIVE_INFINITY;
+    };
+
+    const rowPairs = Array.from(body.querySelectorAll(".workbench-project-row")).map((projectRow, index) => {
+      const nextRow = projectRow.nextElementSibling;
+      const caseRow = nextRow && nextRow.classList.contains("workbench-case-row") ? nextRow : null;
+      return {
+        caseRow,
+        originalIndex: index,
+        projectRow,
+        targetScore: getTargetScore(projectRow),
+      };
+    });
+
+    if (rowPairs.length < 2) {
+      return;
+    }
+
+    rowPairs
+      .sort((left, right) => right.targetScore - left.targetScore || left.originalIndex - right.originalIndex)
+      .forEach(({ projectRow, caseRow }) => {
+        body.appendChild(projectRow);
+        if (caseRow) {
+          body.appendChild(caseRow);
+        }
+      });
+  };
+
   const initWorkbenchViewport = () => {
     const wrap = document.querySelector(".workbench-table-wrap[data-workbench-window]");
     const table = wrap ? wrap.querySelector(".workbench-table") : null;
@@ -725,6 +781,7 @@
   };
 
   initMethodAccordions();
+  initWorkbenchOrdering();
   initWorkbenchCaseStudies();
   initWorkbenchViewport();
   initPricingServiceDetails();
